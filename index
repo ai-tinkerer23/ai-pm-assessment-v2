@@ -1,0 +1,2673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Product Manager Skills Assessment v1.1</title>
+    <!-- 
+        AI Product Manager Skills Assessment
+        Version: 1.1
+        Created: November 2025
+        Author: Lisa Lee-Prioly
+        LinkedIn: https://www.linkedin.com/in/lisa-lee-prioly/
+    -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        .progress-tracker {
+            background: #f8f9fa;
+            padding: 20px 40px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 30px;
+            background: #e9ecef;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .instructions {
+            background: #f8f9fa;
+            padding: 30px 40px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .instructions h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .instructions ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .category-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .category-header h2 {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .category-header p {
+            opacity: 0.9;
+            font-size: 0.95em;
+        }
+
+        .question {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            color: #2d3748;
+        }
+
+        .question-type {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .options {
+            margin-top: 15px;
+        }
+
+        .option {
+            display: flex;
+            align-items: flex-start;
+            padding: 12px;
+            margin-bottom: 10px;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+        }
+
+        .option:hover {
+            border-color: #667eea;
+            transform: translateX(5px);
+        }
+
+        .option input[type="radio"] {
+            margin-right: 12px;
+            margin-top: 3px;
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+        }
+
+        .option label {
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .scenario {
+            background: #e8eaf6;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-style: italic;
+            border-left: 4px solid #764ba2;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #e9ecef;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            margin: 0 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .btn:disabled:hover {
+            background: #ccc;
+            transform: none;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0px);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .section-results {
+            display: none;
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .section-results.show {
+            display: block;
+        }
+
+        .results-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .score-display {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .answer-review {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .answer-item {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #e9ecef;
+        }
+
+        .answer-item.correct {
+            background: #d4edda;
+            border-left-color: #28a745;
+        }
+
+        .answer-item.incorrect {
+            background: #f8d7da;
+            border-left-color: #dc3545;
+        }
+
+        .answer-item h4 {
+            margin-bottom: 10px;
+            color: #2d3748;
+        }
+
+        .your-answer {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .correct-answer {
+            color: #28a745;
+            font-weight: 600;
+        }
+
+        .explanation {
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+
+        .learning-path {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .learning-path h3 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+
+        .learning-path ul {
+            margin-left: 20px;
+        }
+
+        .learning-path li {
+            margin-bottom: 10px;
+            color: #856404;
+        }
+
+        .final-summary {
+            display: none;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .final-summary.show {
+            display: block;
+        }
+
+        .category-score-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .score-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .section-menu-item {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .section-menu-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .section-menu-item.completed {
+            border-left-color: #28a745;
+            background: #f0f9f4;
+        }
+
+        .section-status {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .section-status.completed {
+            background: #28a745;
+            color: white;
+        }
+
+        .section-status.pending {
+            background: #6c757d;
+            color: white;
+        }
+
+        .question-display {
+            background: #e8eaf6;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: #2d3748;
+        }
+
+        .answer-display {
+            background: rgba(255,255,255,0.7);
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .answer-display.correct-choice {
+            background: #d4edda;
+            border: 2px solid #28a745;
+        }
+
+        .answer-display.incorrect-choice {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 20px 40px;
+            text-align: center;
+            border-top: 2px solid #e9ecef;
+            font-size: 0.95em;
+            color: #666;
+        }
+
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .stats-counter {
+            background: #f8f9fa;
+            padding: 15px 40px;
+            border-top: 1px solid #e9ecef;
+            display: flex;
+            justify-content: space-around;
+            font-size: 0.9em;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .final-cta {
+            background: #f0f4ff;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .final-cta h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .final-cta a {
+            color: #667eea;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .final-cta a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+            
+            .header, .instructions, .content {
+                padding: 20px;
+            }
+
+            .btn {
+                padding: 12px 30px;
+                font-size: 1em;
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AI Product Manager Skills Assessment</h1>
+            <p>Section-by-section evaluation with immediate feedback</p>
+            <p style="font-size: 0.85em; opacity: 0.8; margin-top: 5px;">Version 1.1</p>
+        </div>
+
+        <div class="progress-tracker">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                <strong>Progress:</strong>
+                <span id="progressText">0 of 7 sections completed</span>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" id="progressBar" style="width: 0%">0%</div>
+            </div>
+        </div>
+
+        <div class="instructions" id="instructions">
+            <h2>How This Works</h2>
+            <ul>
+                <li><strong>Choose Your Path:</strong> Start with any section or complete them in order</li>
+                <li><strong>Flexible Navigation:</strong> Jump between sections anytime</li>
+                <li><strong>Immediate Feedback:</strong> Get detailed explanations after each section</li>
+                <li><strong>Personalized Learning:</strong> Receive targeted recommendations based on performance</li>
+                <li><strong>Time:</strong> ~5-7 minutes per section (35-50 minutes total)</li>
+            </ul>
+            <div class="button-container">
+                <button class="btn" onclick="showSectionMenu()">Choose a Section</button>
+            </div>
+        </div>
+
+        <div class="instructions" id="sectionMenu" style="display: none;">
+            <h2>Select a Section</h2>
+            <p style="margin-bottom: 20px;">Choose any section to begin. You can complete them in any order.</p>
+            <div id="sectionMenuList"></div>
+        </div>
+
+        <div class="content" id="content" style="display: none;">
+            <!-- SECTION 1: AI Fundamentals -->
+            <div class="section active" id="section1">
+                <div class="category-header">
+                    <h2>Section 1: AI Fundamentals & Mental Models</h2>
+                    <p>Understanding how AI systems work at a conceptual level</p>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">1. You're scoping a new feature. Which scenario is BEST suited for GenAI (LLMs) rather than traditional ML?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q1" value="0" id="q1a">
+                            <label for="q1a">A) Classifying support tickets into 20 predefined categories with 50K training examples</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q1" value="0" id="q1b">
+                            <label for="q1b">B) Generating personalized product descriptions by adapting templates with user context</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q1" value="2" id="q1c">
+                            <label for="q1c">C) Answering unpredictable questions about complex product documentation</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q1" value="0" id="q1d">
+                            <label for="q1d">D) Recommending next-best-action based on customer behavioral patterns</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">2. Your engineer says your AI-powered customer support feature will cost $0.03 per interaction using 15K tokens. What's your FIRST question?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q2" value="2" id="q2a">
+                            <label for="q2a">A) How many tokens are input vs output? Can we use smaller models for simple queries?</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q2" value="0" id="q2b">
+                            <label for="q2b">B) Can we reduce to 10K tokens to cut costs by 33%?</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q2" value="0" id="q2c">
+                            <label for="q2c">C) Should we cache repeated context to reduce redundant processing?</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q2" value="0" id="q2d">
+                            <label for="q2d">D) Can we batch requests to reduce per-call overhead?</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">3. Your team proposes using a 128K context window to let users ask questions about their uploaded documents. What's the PRIMARY concern?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q3" value="0" id="q3a">
+                            <label for="q3a">A) Larger windows always improve accuracy by providing more information</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q3" value="0" id="q3b">
+                            <label for="q3b">B) Cost scales linearly with size, making the feature economically unviable</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q3" value="2" id="q3c">
+                            <label for="q3c">C) Validate if users need 128K tokens or if RAG with smaller contexts works better</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q3" value="0" id="q3d">
+                            <label for="q3d">D) 128K exceeds most document sizes—you're over-engineering</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">4. What's the key difference between fine-tuning and RAG for adapting LLMs to your domain?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q4" value="0" id="q4a">
+                            <label for="q4a">A) Fine-tuning is cheaper but RAG is more accurate for most use cases</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q4" value="2" id="q4b">
+                            <label for="q4b">B) Fine-tuning changes model weights; RAG retrieves context at inference time</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q4" value="0" id="q4c">
+                            <label for="q4c">C) RAG requires more GPU infrastructure than fine-tuning</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q4" value="0" id="q4d">
+                            <label for="q4d">D) They achieve the same results through different technical approaches</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Scenario - 3pts</span>
+                    <div class="scenario">You're building a chatbot answering questions from a 500-page employee handbook updated monthly.</div>
+                    <div class="question-text">5. What's the MOST appropriate technical approach?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q5" value="0" id="q5a">
+                            <label for="q5a">A) Fine-tune GPT-4 monthly on the updated handbook</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q5" value="3" id="q5b">
+                            <label for="q5b">B) Use RAG with vector embeddings updated as handbook changes</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q5" value="0" id="q5c">
+                            <label for="q5c">C) Include entire handbook in each prompt if it fits context window</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q5" value="0" id="q5d">
+                            <label for="q5d">D) Train a custom model from scratch on handbook data</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">6. Which prompt technique improves LLM reliability for complex reasoning tasks?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q6" value="0" id="q6a">
+                            <label for="q6a">A) Increase temperature for more creative problem-solving approaches</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q6" value="2" id="q6b">
+                            <label for="q6b">B) Use chain-of-thought prompting to have models show work step-by-step</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q6" value="0" id="q6c">
+                            <label for="q6c">C) Shorten prompts to reduce noise and improve focus</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q6" value="0" id="q6d">
+                            <label for="q6d">D) Request JSON format output for structured responses</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <button class="btn btn-secondary" onclick="showSectionMenu()">← Choose Another Section</button>
+                    <button class="btn" onclick="submitSection(1)">Submit Section 1</button>
+                </div>
+            </div>
+
+            <!-- Section Results Template -->
+            <div class="section-results" id="results1"></div>
+
+            <!-- SECTION 2: AI Strategy -->
+            <div class="section" id="section2">
+                <div class="category-header">
+                    <h2>Section 2: AI Product Strategy & Evaluation</h2>
+                    <p>Making strategic decisions about when and how to use AI</p>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Scenario - 3pts</span>
+                    <div class="scenario">Your CEO wants to "add AI" to your product. Currently you have a basic sorting feature.</div>
+                    <div class="question-text">7. What's the BEST response?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q7" value="0" id="q7a">
+                            <label for="q7a">A) Add ML to predict user's preferred sort order</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q7" value="3" id="q7b">
+                            <label for="q7b">B) Identify high-value problems where AI provides solutions traditional software can't</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q7" value="0" id="q7c">
+                            <label for="q7c">C) Build a chatbot interface for natural language sorting requests</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q7" value="0" id="q7d">
+                            <label for="q7d">D) Decline—existing sorting works fine and AI would add no value</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">8. Your AI feature achieves 94% accuracy. Which scenario is MOST concerning?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q8" value="0" id="q8a">
+                            <label for="q8a">A) Content recommendations for a news reader</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q8" value="2" id="q8b">
+                            <label for="q8b">B) Flagging potential medication errors for pharmacist review</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q8" value="0" id="q8c">
+                            <label for="q8c">C) Auto-tagging expense receipts for accounting categories</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q8" value="0" id="q8d">
+                            <label for="q8d">D) Suggesting relevant contacts for email introductions</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">9. Your fraud detection model has high precision (95%) but low recall (40%). What does this mean?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q9" value="2" id="q9a">
+                            <label for="q9a">A) When it flags fraud, it's usually correct, but it misses 60% of actual fraud</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q9" value="0" id="q9b">
+                            <label for="q9b">B) It catches all fraud cases but generates many false positives</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q9" value="0" id="q9c">
+                            <label for="q9c">C) The model is overfitting to training data patterns</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q9" value="0" id="q9d">
+                            <label for="q9d">D) Overall accuracy is 67.5%, which needs improvement</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Scenario - 3pts</span>
+                    <div class="scenario">AI writing assistant launched with great reviews, but usage drops 40% after 2 weeks.</div>
+                    <div class="question-text">10. Which metric BEST diagnoses the problem?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q10" value="0" id="q10a">
+                            <label for="q10a">A) Model accuracy score on held-out test set</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q10" value="0" id="q10b">
+                            <label for="q10b">B) Week-over-week new user signup rates</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q10" value="3" id="q10c">
+                            <label for="q10c">C) Percentage of AI suggestions accepted vs. rejected by users</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q10" value="0" id="q10d">
+                            <label for="q10d">D) Average API response latency over time</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">True/False - 1pt</span>
+                    <div class="question-text">11. LLMs only "hallucinate" when they malfunction or encounter edge cases outside their training.</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q11" value="0" id="q11a">
+                            <label for="q11a">True</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q11" value="1" id="q11b">
+                            <label for="q11b">False</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">12. What's the MOST important factor deciding if AI is appropriate for a problem?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q12" value="0" id="q12a">
+                            <label for="q12a">A) Multiple competitors are using AI for similar problems</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q12" value="2" id="q12b">
+                            <label for="q12b">B) Problem requires pattern recognition that's hard to code but easy to demonstrate</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q12" value="0" id="q12c">
+                            <label for="q12c">C) Engineering team has ML expertise available</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q12" value="0" id="q12d">
+                            <label for="q12d">D) Leadership has allocated budget for AI initiatives</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <button class="btn btn-secondary" onclick="showSectionMenu()">← Choose Another Section</button>
+                    <button class="btn" onclick="submitSection(2)">Submit Section 2</button>
+                </div>
+            </div>
+
+            <div class="section-results" id="results2"></div>
+
+            <!-- SECTION 3: Hands-On AI Building -->
+            <div class="section" id="section3">
+                <div class="category-header">
+                    <h2>Section 3: Hands-On AI Building</h2>
+                    <p>Practical experience with AI tools and prototyping</p>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">13. You want to validate whether AI can summarize support tickets before investing engineering resources. What's the FASTEST validation approach?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q13" value="0" id="q13a">
+                            <label for="q13a">A) Write detailed PRD and request engineering estimate</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q13" value="2" id="q13b">
+                            <label for="q13b">B) Use no-code tools (n8n/Zapier) to connect your system to AI APIs for testing</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q13" value="0" id="q13c">
+                            <label for="q13c">C) Manually test 50 tickets in ChatGPT to validate concept</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q13" value="0" id="q13d">
+                            <label for="q13d">D) Contract with external developers for proof-of-concept</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">14. Your prototype works in testing but fails in production during peak hours. What's the MOST likely cause?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q14" value="2" id="q14a">
+                            <label for="q14a">A) API rate limits—you're hitting request-per-minute caps during high traffic</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q14" value="0" id="q14b">
+                            <label for="q14b">B) Model quality degrades with scale</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q14" value="0" id="q14c">
+                            <label for="q14c">C) Production data differs from test data</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q14" value="0" id="q14d">
+                            <label for="q14d">D) Server infrastructure can't handle the load</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">15. You're reading API docs and see "429 Too Many Requests" error. What product decision does this inform?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q15" value="2" id="q15a">
+                            <label for="q15a">A) Need retry logic, rate limiting, and potentially higher API tier or usage caps</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q15" value="0" id="q15b">
+                            <label for="q15b">B) This API is unreliable—consider switching providers</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q15" value="0" id="q15c">
+                            <label for="q15c">C) Authentication setup needs fixing</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q15" value="0" id="q15d">
+                            <label for="q15d">D) Indicates model is overloaded—wait for provider to scale</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Scenario - 3pts</span>
+                    <div class="scenario">Your no-code prototype validates the concept. Engineering says rebuilding "properly" takes 6 weeks.</div>
+                    <div class="question-text">16. What's your BEST strategic response?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q16" value="0" id="q16a">
+                            <label for="q16a">A) Ship no-code version to all users immediately to capture value</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q16" value="3" id="q16b">
+                            <label for="q16b">B) Ask what production requirements no-code doesn't meet—validate 6 weeks is justified</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q16" value="0" id="q16c">
+                            <label for="q16c">C) Drop the feature—6 weeks is too long for this value</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q16" value="0" id="q16d">
+                            <label for="q16d">D) Beta test no-code version while engineering builds production</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">17. What's the PRIMARY benefit of PMs building AI prototypes themselves?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q17" value="0" id="q17a">
+                            <label for="q17a">A) Demonstrates technical capability to engineering team</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q17" value="2" id="q17b">
+                            <label for="q17b">B) Builds intuition about what's hard vs. easy, improving scoping and prioritization</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q17" value="0" id="q17c">
+                            <label for="q17c">C) Saves engineering time by shipping prototypes directly</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q17" value="0" id="q17d">
+                            <label for="q17d">D) Allows faster feature delivery without engineering bottlenecks</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">True/False - 1pt</span>
+                    <div class="question-text">18. Once you find a prompt that works, you don't need to version control it since prompts are just text.</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q18" value="0" id="q18a">
+                            <label for="q18a">True</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q18" value="1" id="q18b">
+                            <label for="q18b">False</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <button class="btn btn-secondary" onclick="showSectionMenu()">← Choose Another Section</button>
+                    <button class="btn" onclick="submitSection(3)">Submit Section 3</button>
+                </div>
+            </div>
+
+            <div class="section-results" id="results3"></div>
+
+            <!-- SECTION 4: Data & Privacy -->
+            <div class="section" id="section4">
+                <div class="category-header">
+                    <h2>Section 4: Data & Privacy</h2>
+                    <p>Managing data responsibly and understanding privacy implications</p>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Scenario - 3pts</span>
+                    <div class="scenario">Building an AI tutor where students upload graded assignments for personalized help.</div>
+                    <div class="question-text">19. What's your PRIMARY data concern?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q19" value="0" id="q19a">
+                            <label for="q19a">A) Storage costs for large document volumes</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q19" value="3" id="q19b">
+                            <label for="q19b">B) Whether student data trains models and FERPA/COPPA compliance</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q19" value="0" id="q19c">
+                            <label for="q19c">C) File format compatibility across different grading systems</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q19" value="0" id="q19d">
+                            <label for="q19d">D) OCR accuracy for handwritten assignments</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">20. GDPR's "right to be forgotten" means for your AI product:</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q20" value="2" id="q20a">
+                            <label for="q20a">A) Must delete user data on request, including removing from training sets</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q20" value="0" id="q20b">
+                            <label for="q20b">B) Only applies if you're a European company</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q20" value="0" id="q20c">
+                            <label for="q20c">C) Third-party AI providers handle this automatically</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q20" value="0" id="q20d">
+                            <label for="q20d">D) Users can opt out of AI-generated content visibility</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">True/False - 1pt</span>
+                    <div class="question-text">21. Using OpenAI's API, all your prompts and responses are automatically used to train their models.</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q21" value="0" id="q21a">
+                            <label for="q21a">True</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q21" value="1" id="q21b">
+                            <label for="q21b">False—API data isn't used for training by default (as of March 2023)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">22. Your AI hiring tool shows significantly different rejection rates across zip codes. What's the PRIMARY concern?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q22" value="0" id="q22a">
+                            <label for="q22a">A) The model may have learned real geographic differences in candidate quality</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q22" value="2" id="q22b">
+                            <label for="q22b">B) The AI tool is using zip code as a proxy for protected characteristics like race—creating illegal bias</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q22" value="0" id="q22c">
+                            <label for="q22c">C) Sample size issues—some zip codes have too few candidates in training data</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q22" value="0" id="q22d">
+                            <label for="q22d">D) The feature engineering process needs refinement</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Scenario - 3pts</span>
+                    <div class="scenario">Your team wants to build an AI tool to generate personalized sales emails. You have 500 successful examples, but your data scientist says that's too few to fine-tune a model.</div>
+                    <div class="question-text">23. What's your BEST approach?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q23" value="0" id="q23a">
+                            <label for="q23a">A) Delay project 6 months to collect 10K examples</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q23" value="3" id="q23b">
+                            <label for="q23b">B) Use few-shot prompting with 5-10 best examples—no training needed</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q23" value="0" id="q23c">
+                            <label for="q23c">C) Generate synthetic training data to reach 10K examples</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q23" value="0" id="q23d">
+                            <label for="q23d">D) Train on 500 examples and accept lower quality</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">24. Which scenario poses the HIGHEST privacy risk?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q24" value="0" id="q24a">
+                            <label for="q24a">A) Storing anonymized aggregate usage metrics</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q24" value="2" id="q24b">
+                            <label for="q24b">B) Employees pasting customer data into ChatGPT for draft responses</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q24" value="0" id="q24c">
+                            <label for="q24c">C) Collecting user preferences for personalization</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q24" value="0" id="q24d">
+                            <label for="q24d">D) A/B testing AI feature variations</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <button class="btn btn-secondary" onclick="showSectionMenu()">← Choose Another Section</button>
+                    <button class="btn" onclick="submitSection(4)">Submit Section 4</button>
+                </div>
+            </div>
+
+            <div class="section-results" id="results4"></div>
+
+            <!-- SECTION 5: AI Product Development Process -->
+            <div class="section" id="section5">
+                <div class="category-header">
+                    <h2>Section 5: AI Product Development Process</h2>
+                    <p>Managing AI product development effectively</p>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">25. What's MOST important when writing requirements for AI features vs. traditional features?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q25" value="0" id="q25a">
+                            <label for="q25a">A) AI features need more detailed technical specifications</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q25" value="2" id="q25b">
+                            <label for="q25b">B) Define acceptable error ranges and edge case handling—outputs are probabilistic</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q25" value="0" id="q25c">
+                            <label for="q25c">C) AI requirements take longer to implement</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q25" value="0" id="q25d">
+                            <label for="q25d">D) No fundamental difference in approach</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Scenario - 3pts</span>
+                    <div class="scenario">Your ML engineer reports your customer feedback sentiment classifier achieved 85% accuracy on the test set and is ready to ship.</div>
+                    <div class="question-text">26. What's your next step?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q26" value="0" id="q26a">
+                            <label for="q26a">A) Ship immediately—85% exceeds industry standards</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q26" value="3" id="q26b">
+                            <label for="q26b">B) Test on production edge cases and understand what the 15% errors look like</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q26" value="0" id="q26c">
+                            <label for="q26c">C) Request 95% accuracy before considering launch</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q26" value="0" id="q26d">
+                            <label for="q26d">D) Run additional training iterations to improve score</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">True/False - 1pt</span>
+                    <div class="question-text">27. AI models can degrade over time even without code changes, due to data drift.</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q27" value="1" id="q27a">
+                            <label for="q27a">True</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q27" value="0" id="q27b">
+                            <label for="q27b">False</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">28. ML engineer needs 3 months to train a custom model. What's your FIRST question?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q28" value="2" id="q28a">
+                            <label for="q28a">A) Can we validate value using existing models/prompting before custom training?</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q28" value="0" id="q28b">
+                            <label for="q28b">B) What accuracy improvement justifies 3 months?</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q28" value="0" id="q28c">
+                            <label for="q28c">C) What are infrastructure costs for custom models?</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q28" value="0" id="q28d">
+                            <label for="q28d">D) Can we hire contractors to accelerate timeline?</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">29. What distinguishes "research ML" from "production ML"?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q29" value="2" id="q29a">
+                            <label for="q29a">A) Production requires reliability, monitoring, cost optimization, error handling</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q29" value="0" id="q29b">
+                            <label for="q29b">B) Research ML achieves higher accuracy</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q29" value="0" id="q29c">
+                            <label for="q29c">C) Production ML uses simpler algorithms</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q29" value="0" id="q29d">
+                            <label for="q29d">D) No meaningful difference—both solve same problems</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Scenario - 3pts</span>
+                    <div class="scenario">Updated model improved accuracy 87%→91%, but users complain feature "got worse."</div>
+                    <div class="question-text">30. What's the MOST likely explanation?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q30" value="0" id="q30a">
+                            <label for="q30a">A) Users don't understand statistical improvements</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q30" value="3" id="q30b">
+                            <label for="q30b">B) Model makes different error types now—more noticeable or consequential to users</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q30" value="0" id="q30c">
+                            <label for="q30c">C) Test set doesn't match production data distribution</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q30" value="0" id="q30d">
+                            <label for="q30d">D) Deployment introduced unrelated bugs</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <button class="btn btn-secondary" onclick="showSectionMenu()">← Choose Another Section</button>
+                    <button class="btn" onclick="submitSection(5)">Submit Section 5</button>
+                </div>
+            </div>
+
+            <div class="section-results" id="results5"></div>
+
+            <!-- SECTION 6: AI Economics & Business Models -->
+            <div class="section" id="section6">
+                <div class="category-header">
+                    <h2>Section 6: AI Economics & Business Models</h2>
+                    <p>Understanding financial implications of AI products</p>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Scenario - 3pts</span>
+                    <div class="scenario">AI feature costs $0.10 per interaction. You have 100K DAU, each using it 5 times daily.</div>
+                    <div class="question-text">31. What's your monthly AI cost?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q31" value="0" id="q31a">
+                            <label for="q31a">A) $500,000</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q31" value="3" id="q31b">
+                            <label for="q31b">B) $1,500,000</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q31" value="0" id="q31c">
+                            <label for="q31c">C) $150,000</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q31" value="0" id="q31d">
+                            <label for="q31d">D) $3,000,000</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">32. Why choose GPT-3.5 over GPT-4 for a feature?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q32" value="2" id="q32a">
+                            <label for="q32a">A) 10-15x cheaper and "good enough" for simpler tasks—better unit economics</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q32" value="0" id="q32b">
+                            <label for="q32b">B) GPT-3.5 is faster for all use cases</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q32" value="0" id="q32c">
+                            <label for="q32c">C) GPT-4 is being phased out</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q32" value="0" id="q32d">
+                            <label for="q32d">D) Never compromise on model quality</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">33. What's a key risk of building exclusively on OpenAI's API?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q33" value="2" id="q33a">
+                            <label for="q33a">A) Vendor lock-in—pricing, service changes, outages beyond your control</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q33" value="0" id="q33b">
+                            <label for="q33b">B) OpenAI models are lower quality than alternatives</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q33" value="0" id="q33c">
+                            <label for="q33c">C) APIs are always more expensive than self-hosting</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q33" value="0" id="q33d">
+                            <label for="q33d">D) No significant risks—APIs are optimal strategy</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">True/False - 1pt</span>
+                    <div class="question-text">34. Building AI models in-house is almost always cheaper than using third-party APIs at scale.</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q34" value="0" id="q34a">
+                            <label for="q34a">True</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q34" value="1" id="q34b">
+                            <label for="q34b">False</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Scenario - 3pts</span>
+                    <div class="scenario">CFO asks how you'll justify $200K/month AI spend for new feature.</div>
+                    <div class="question-text">35. What's the STRONGEST business case?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q35" value="0" id="q35a">
+                            <label for="q35a">A) Competitive parity—leading competitors use similar AI</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q35" value="3" id="q35b">
+                            <label for="q35b">B) Feature increases conversion 12%, reduces churn 8%—generates $500K/month</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q35" value="0" id="q35c">
+                            <label for="q35c">C) Strong qualitative user feedback and NPS improvement</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q35" value="0" id="q35d">
+                            <label for="q35d">D) Demonstrates innovation leadership in market</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">36. Which pricing model best fits products with high, variable AI inference costs?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q36" value="0" id="q36a">
+                            <label for="q36a">A) Completely free with advertising</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q36" value="2" id="q36b">
+                            <label for="q36b">B) Usage-based pricing or tiered plans with usage caps</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q36" value="0" id="q36c">
+                            <label for="q36c">C) Flat unlimited subscription</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q36" value="0" id="q36d">
+                            <label for="q36d">D) One-time perpetual license</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <button class="btn btn-secondary" onclick="showSectionMenu()">← Choose Another Section</button>
+                    <button class="btn" onclick="submitSection(6)">Submit Section 6</button>
+                </div>
+            </div>
+
+            <div class="section-results" id="results6"></div>
+
+            <!-- SECTION 7: Domain-Specific (Learning & Education) -->
+            <div class="section" id="section7">
+                <div class="category-header">
+                    <h2>Section 7: AI in Learning & Education</h2>
+                    <p>Applying AI to learning, education, and workforce development</p>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Scenario - 3pts</span>
+                    <div class="scenario">AI tutor tells student "2+2=5" when asked for help with basic math.</div>
+                    <div class="question-text">37. Why is this MORE serious than same error in general chatbot?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q37" value="0" id="q37a">
+                            <label for="q37a">A) Not more serious—errors are equally problematic everywhere</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q37" value="3" id="q37b">
+                            <label for="q37b">B) Educational errors create misconceptions that interfere with future learning</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q37" value="0" id="q37c">
+                            <label for="q37c">C) Parents will complain more vocally</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q37" value="0" id="q37d">
+                            <label for="q37d">D) It's obviously wrong so students will ignore it</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">38. What distinguishes adaptive learning from content recommendations (like Netflix)?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q38" value="2" id="q38a">
+                            <label for="q38a">A) Must consider learning science—spacing, scaffolding, zone of proximal development</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q38" value="0" id="q38b">
+                            <label for="q38b">B) They're fundamentally identical recommendation problems</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q38" value="0" id="q38c">
+                            <label for="q38c">C) Adaptive learning is technically simpler to implement</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q38" value="0" id="q38d">
+                            <label for="q38d">D) Adaptive learning doesn't use AI</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">True/False - 1pt</span>
+                    <div class="question-text">39. AI-generated practice problems are always superior to human-created ones because AI produces infinite variations.</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q39" value="0" id="q39a">
+                            <label for="q39a">True</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q39" value="1" id="q39b">
+                            <label for="q39b">False</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">40. Using AI to predict student dropout risk—what's the PRIMARY ethical concern?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q40" value="0" id="q40a">
+                            <label for="q40a">A) Predictions may not be 100% accurate</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q40" value="2" id="q40b">
+                            <label for="q40b">B) Predictions can become self-fulfilling or bias teacher treatment</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q40" value="0" id="q40c">
+                            <label for="q40c">C) Parents might object to data collection</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q40" value="0" id="q40d">
+                            <label for="q40d">D) Feature is expensive to maintain</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Scenario - 3pts</span>
+                    <div class="scenario">AI writing assistant helps students draft essays. Teachers say students are "cheating."</div>
+                    <div class="question-text">41. What's the MOST constructive product response?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q41" value="0" id="q41a">
+                            <label for="q41a">A) Remove feature to avoid controversy</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q41" value="3" id="q41b">
+                            <label for="q41b">B) Redesign to support writing process (brainstorming, revision) not final drafts</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q41" value="0" id="q41c">
+                            <label for="q41c">C) Add AI detection so teachers can identify AI usage</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q41" value="0" id="q41d">
+                            <label for="q41d">D) Argue this is the future and teachers must adapt</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">42. In learning analytics, what's a "knowledge gap"?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q42" value="2" id="q42a">
+                            <label for="q42a">A) Difference between what learner knows and needs to know to progress</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q42" value="0" id="q42b">
+                            <label for="q42b">B) Missing data in analytics systems</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q42" value="0" id="q42c">
+                            <label for="q42c">C) Topics not yet covered in curriculum</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q42" value="0" id="q42d">
+                            <label for="q42d">D) Time between learning sessions</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">True/False - 1pt</span>
+                    <div class="question-text">43. In workforce development, AI skills assessments should only measure technical knowledge, not practical application.</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q43" value="0" id="q43a">
+                            <label for="q43a">True</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q43" value="1" id="q43b">
+                            <label for="q43b">False</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Multiple Choice - 2pts</span>
+                    <div class="question-text">44. Building AI to curate learning content—what's TOP priority for quality control?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q44" value="0" id="q44a">
+                            <label for="q44a">A) Content is engaging and entertaining</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q44" value="2" id="q44b">
+                            <label for="q44b">B) Content is pedagogically sound, accurate, appropriately scaffolded</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q44" value="0" id="q44c">
+                            <label for="q44c">C) Content loads quickly</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q44" value="0" id="q44d">
+                            <label for="q44d">D) Content comes from popular sources</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <span class="question-type">Scenario - 3pts</span>
+                    <div class="scenario">AI predicts learner will master skill in 2 weeks. Learner sees this prediction.</div>
+                    <div class="question-text">45. What's your PRIMARY concern?</div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="q45" value="0" id="q45a">
+                            <label for="q45a">A) Prediction accuracy may be off by days</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q45" value="3" id="q45b">
+                            <label for="q45b">B) Predictions affect learner motivation and agency—may give up or coast</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q45" value="0" id="q45c">
+                            <label for="q45c">C) Privacy concerns about showing personalized data</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="q45" value="0" id="q45d">
+                            <label for="q45d">D) UI design for displaying predictions needs iteration</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <button class="btn btn-secondary" onclick="showSectionMenu()">← Choose Another Section</button>
+                    <button class="btn" onclick="submitSection(7)">Submit Section 7</button>
+                </div>
+            </div>
+
+            <div class="section-results" id="results7"></div>
+
+            <div class="final-summary" id="finalSummary">
+                <div class="results-header">
+                    <h2>🎉 Assessment Complete!</h2>
+                    <div class="score-display" id="finalScore">0 / 128</div>
+                    <p>Your Overall AI PM Fluency</p>
+                </div>
+                <div id="finalCategoryBreakdown"></div>
+                <div class="learning-path">
+                    <h3>🎯 Your Personalized Development Roadmap</h3>
+                    <div id="finalRecommendations"></div>
+                </div>
+                <div class="final-cta">
+                    <h3>💼 Connect with the Builder</h3>
+                    <p>This assessment was built to prototype a solution to a genuine workforce upskilling problem. If you are building products at the intersection of AI, Learning, and Workforce Strategy, I'm seeking my next full-time challenge in this space. Let's connect and discuss how to solve your next big problem.</p>
+                    <p style="margin-top: 15px;"><strong>Connect with the Builder:</strong> <a href="https://www.linkedin.com/in/lisa-lee-prioly/" target="_blank">Lisa Lee-Prioly</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Built by <a href="https://www.linkedin.com/in/lisa-lee-prioly/" target="_blank">Lisa Lee-Prioly</a></p>
+            <p>Open to Full-time Product roles in AI, Learning, EdTech, & Workforce</p>
+            <p style="font-size: 0.8em; color: #999; margin-top: 10px;">Version 1.1 | November 2025</p>
+        </div>
+    </div>
+
+    <script>
+        // Question data with explanations
+        const questionData = {
+            1: {
+                correct: 'C',
+                explanation: 'GenAI excels at handling unpredictable, open-ended queries with semantic understanding. Options A and D are classic ML classification problems with structured data. Option B could work with templates, but LLMs are overkill when structured generation suffices.',
+                learningPoint: 'Use GenAI when you need flexible, contextual understanding and generation. Use traditional ML for structured prediction with defined categories.'
+            },
+            2: {
+                correct: 'A',
+                explanation: 'This shows strategic PM thinking: understanding cost drivers (input vs output tokens cost differently) AND appropriate model selection. Option B is arbitrary without analysis. Options C and D are optimizations that come later.',
+                learningPoint: 'Always decompose costs to understand what drives them, then optimize based on actual requirements—not arbitrary targets.'
+            },
+            3: {
+                correct: 'C',
+                explanation: 'This demonstrates product judgment: validate user needs BEFORE choosing technical approaches. Large context windows have costs and "lost in the middle" problems. RAG often provides better precision with lower cost.',
+                learningPoint: 'Let user needs and use cases drive technical decisions, not feature specifications or technical capabilities.'
+            },
+            4: {
+                correct: 'B',
+                explanation: 'Fine-tuning modifies the model itself (expensive, permanent changes). RAG dynamically retrieves relevant information at query time (flexible, easier to update). Each has different cost/benefit profiles.',
+                learningPoint: 'RAG is often preferable for frequently-changing knowledge bases; fine-tuning for style/format adaptation or specialized domains.'
+            },
+            5: {
+                correct: 'B',
+                explanation: 'Monthly updates make fine-tuning impractical and expensive. Including full handbook wastes tokens. RAG with vector search retrieves only relevant sections, updates easily, and is cost-effective.',
+                learningPoint: 'For reference materials that change frequently, RAG provides flexibility and maintainability that fine-tuning cannot match.'
+            },
+            6: {
+                correct: 'B',
+                explanation: 'Chain-of-thought prompting encourages models to break down reasoning, which dramatically improves accuracy on complex tasks. Higher temperature adds randomness. Shorter prompts reduce context. JSON is about format, not reasoning.',
+                learningPoint: 'For complex reasoning, make the model show its work step-by-step. This catches errors in logic and improves reliability.'
+            },
+            7: {
+                correct: 'B',
+                explanation: 'This redirects from "AI for AI\'s sake" toward strategic value. Option A adds complexity without value. Option C is AI theater. Option D misses the opportunity to explore genuine AI use cases.',
+                learningPoint: 'Always anchor AI decisions in user problems and business value, not technical capabilities or executive mandates.'
+            },
+            8: {
+                correct: 'B',
+                explanation: 'In healthcare, 6% error rate on medication safety is catastrophic. Pharmacists can\'t review every suggestion, so errors will reach patients. In other scenarios, 94% accuracy might be acceptable.',
+                learningPoint: 'Acceptable error rates depend on use case consequences. High-stakes domains require much higher accuracy than convenience features.'
+            },
+            9: {
+                correct: 'A',
+                explanation: 'High precision = few false positives. Low recall = many false negatives (missed fraud). This model is conservative—when it flags something, it\'s usually right, but it misses most fraud.',
+                learningPoint: 'Precision vs recall reflects different error types. Choose based on which errors are more costly in your domain.'
+            },
+            10: {
+                correct: 'C',
+                explanation: 'Acceptance rate shows whether users find suggestions valuable. Test accuracy doesn\'t reflect real-world value. Signups measure acquisition, not retention. Latency is important but unlikely to cause 40% drop.',
+                learningPoint: 'For AI features, measure actual user acceptance and integration into workflows, not just technical performance metrics.'
+            },
+            11: {
+                correct: 'False',
+                explanation: 'Hallucination is inherent to how LLMs work—they generate probable continuations, not retrieve facts. They hallucinate even when functioning normally, especially on topics with limited training data.',
+                learningPoint: 'Treat hallucination as a fundamental LLM characteristic requiring product-level mitigation, not a bug to be fixed.'
+            },
+            12: {
+                correct: 'B',
+                explanation: 'AI shines when patterns exist but are too complex or nuanced to explicitly program. If you can write clear rules, traditional code is simpler. Competitor activity, team skills, and budget are secondary considerations.',
+                learningPoint: 'AI is a tool for specific problem types. Use it when the alternative is complex heuristics or expert intuition, not when simple logic suffices.'
+            },
+            13: {
+                correct: 'B',
+                explanation: 'No-code automation lets you test with real data and workflows in days, not weeks. Manual testing (C) doesn\'t validate automation. PRDs (A) and contractors (D) take too long for validation.',
+                learningPoint: 'Use no-code tools to rapidly validate AI value before investing engineering resources. Speed of learning trumps production quality at validation stage.'
+            },
+            14: {
+                correct: 'A',
+                explanation: 'Most AI APIs have rate limits (requests per minute/hour). Testing with low volume won\'t reveal this. Options B, C, and D are possible but rate limiting is the most common production failure pattern.',
+                learningPoint: 'Always test at production scale and understand API rate limits. Build retry logic and consider tiered access before launch.'
+            },
+            15: {
+                correct: 'A',
+                explanation: '429 errors indicate rate limiting. This requires product decisions about retry logic, user experience during failures, and whether to upgrade API tier or implement usage caps.',
+                learningPoint: 'API errors inform product strategy, not just technical implementation. Rate limits may require usage caps or pricing changes.'
+            },
+            16: {
+                correct: 'B',
+                explanation: 'This question challenges assumptions. Maybe the no-code version meets production needs. Or maybe there are legitimate concerns (security, scale, maintainability). Validate before committing 6 weeks.',
+                learningPoint: 'Always ask what specific requirements justify rebuild timelines. Sometimes "proper" engineering is necessary; sometimes it\'s perfectionism.'
+            },
+            17: {
+                correct: 'B',
+                explanation: 'Hands-on building teaches you what\'s actually difficult, what\'s fast vs slow, what\'s expensive vs cheap. This intuition dramatically improves your product judgment and scoping ability.',
+                learningPoint: 'Build prototypes to develop intuition about AI capabilities and constraints. This makes you a better PM, not a replacement for engineering.'
+            },
+            18: {
+                correct: 'False',
+                explanation: 'Prompts are code. Small changes can dramatically affect outputs. Version control lets you track what worked, revert changes, and understand why performance changed.',
+                learningPoint: 'Treat prompts, parameters, and model versions with the same rigor as code. Track changes and maintain the ability to rollback.'
+            },
+            19: {
+                correct: 'B',
+                explanation: 'Student data is highly regulated (FERPA in US, GDPR in EU). Whether AI training uses this data is a critical legal and ethical issue. Options A, C, D are secondary concerns.',
+                learningPoint: 'Educational technology has unique regulatory requirements. Data privacy and training data usage must be addressed before building features.'
+            },
+            20: {
+                correct: 'A',
+                explanation: 'GDPR applies to any company processing EU residents\' data. Right to be forgotten requires full deletion, including from training data. Third-party models don\'t automatically handle this.',
+                learningPoint: 'Understand data regulations for your market. Compliance requirements may constrain your AI architecture and vendor choices.'
+            },
+            21: {
+                correct: 'False',
+                explanation: 'As of March 2023, OpenAI changed their policy—API data is not used for training by default. You must opt-in. However, policies can change, so always verify current terms.',
+                learningPoint: 'Read vendor terms carefully and stay updated on policy changes. Default settings may not protect sensitive data adequately.'
+            },
+            22: {
+                correct: 'B',
+                explanation: 'Zip code correlates with race and socioeconomic status. Using it creates proxy discrimination, which is illegal in hiring. This is a classic example of algorithmic bias.',
+                learningPoint: 'Features that seem neutral can encode discrimination. Test for disparate impact across protected groups.'
+            },
+            23: {
+                correct: 'B',
+                explanation: 'Few-shot prompting uses your best examples directly in prompts—no training required. This is faster, cheaper, and often sufficient. Collecting 10K examples (A) delays value unnecessarily.',
+                learningPoint: 'Before investing in custom model training, test if few-shot prompting with existing models delivers sufficient quality.'
+            },
+            24: {
+                correct: 'B',
+                explanation: 'Pasting customer data into ChatGPT sends it to OpenAI\'s servers, potentially exposing sensitive information. This is a common and serious breach of data handling policies.',
+                learningPoint: 'Educate teams about data handling with AI tools. Convenience features like ChatGPT can create major privacy risks.'
+            },
+            25: {
+                correct: 'B',
+                explanation: 'AI outputs are probabilistic, not deterministic. You must define acceptable error ranges and how to handle edge cases. Traditional PRDs assume predictable behavior.',
+                learningPoint: 'AI requirements must acknowledge uncertainty. Define success criteria that account for probabilistic outputs.'
+            },
+            26: {
+                correct: 'B',
+                explanation: 'Test accuracy doesn\'t tell you what the 15% errors look like. Are they minor issues or catastrophic failures? Do they appear in critical workflows? This determines if 85% is acceptable.',
+                learningPoint: 'Error analysis matters more than aggregate accuracy. Understand error patterns in real usage before shipping.'
+            },
+            27: {
+                correct: 'True',
+                explanation: 'Data drift occurs when production data distribution changes from training data. Models become less accurate even with identical code. This requires ongoing monitoring and retraining.',
+                learningPoint: 'AI products require ongoing maintenance. Build monitoring and retraining into your product roadmap and operations.'
+            },
+            28: {
+                correct: 'A',
+                explanation: 'This shows PM judgment: validate the concept with faster approaches before committing 3 months. Maybe existing models + good prompts deliver 90% of the value.',
+                learningPoint: 'Always ask if custom training is necessary. Existing models have become remarkably capable—test them first.'
+            },
+            29: {
+                correct: 'A',
+                explanation: 'Research focuses on pushing accuracy boundaries. Production requires reliability, monitoring, graceful degradation, cost management—all the operational concerns research ignores.',
+                learningPoint: 'Productionizing ML requires different skills than research. Plan for monitoring, error handling, and operational complexity.'
+            },
+            30: {
+                correct: 'B',
+                explanation: 'Aggregate accuracy improved, but error distribution changed. Maybe it now fails on common cases instead of edge cases. Users notice errors that affect their workflows, not overall statistics.',
+                learningPoint: 'User perception depends on error distribution, not just aggregate metrics. Analyze which errors increased even if overall accuracy improved.'
+            },
+            31: {
+                correct: 'B',
+                explanation: '100K users × 5 interactions/day × 30 days × $0.10 = $1,500,000/month. This calculation demonstrates why cost modeling is critical for AI products.',
+                learningPoint: 'Always model AI costs at scale before launching. Unit economics that work at 100 users may be unsustainable at 100K.'
+            },
+            32: {
+                correct: 'A',
+                explanation: 'GPT-3.5 is 10-15x cheaper than GPT-4. For simpler tasks where GPT-3.5 is "good enough," this dramatically improves unit economics without sacrificing much quality.',
+                learningPoint: 'Match model capability to task complexity. Using the most powerful model for every task wastes resources.'
+            },
+            33: {
+                correct: 'A',
+                explanation: 'Vendor lock-in means pricing changes, service changes, or outages are outside your control. This creates business risk that must be weighed against the convenience of APIs.',
+                learningPoint: 'Consider vendor lock-in risk in your architecture decisions. Sometimes the convenience of APIs justifies the risk; sometimes it doesn\'t.'
+            },
+            34: {
+                correct: 'False',
+                explanation: 'Building in-house requires ML talent, infrastructure, and ongoing maintenance. API costs may seem high but often beat total cost of ownership for in-house solutions.',
+                learningPoint: 'Evaluate total cost of ownership, not just API fees. In-house development includes hidden costs like talent, infrastructure, and maintenance.'
+            },
+            35: {
+                correct: 'B',
+                explanation: 'Quantified business impact (revenue, conversion, churn) is the strongest justification. Options A, C, D are supporting arguments but don\'t prove ROI.',
+                learningPoint: 'Justify AI spend with quantified business outcomes, not with competitive positioning or user satisfaction alone.'
+            },
+            36: {
+                correct: 'B',
+                explanation: 'When costs vary with usage, flat unlimited pricing creates unsustainable economics. Usage-based pricing or tiered caps align costs with value delivered.',
+                learningPoint: 'Pricing models should reflect cost structure. High variable costs require usage-based pricing or caps to remain profitable.'
+            },
+            37: {
+                correct: 'B',
+                explanation: 'Educational errors don\'t just misinform—they create misconceptions that actively interfere with future learning. Students trust educational tools implicitly, making errors particularly harmful.',
+                learningPoint: 'In educational contexts, accuracy requirements are higher because errors compound over time and damage learning outcomes.'
+            },
+            38: {
+                correct: 'A',
+                explanation: 'Learning requires spacing, scaffolding, and staying in the zone of proximal development. Netflix optimizes for engagement; adaptive learning must optimize for learning science principles.',
+                learningPoint: 'Educational AI requires domain expertise in learning science, not just recommendation algorithms. Engagement ≠ learning.'
+            },
+            39: {
+                correct: 'False',
+                explanation: 'AI-generated problems can have subtle errors, may not target specific learning objectives, and lack the pedagogical design of expert-created problems. Quantity ≠ quality.',
+                learningPoint: 'AI generation is a tool, not a replacement for pedagogical expertise. Human review and curation remain essential.'
+            },
+            40: {
+                correct: 'B',
+                explanation: 'Predictions can become self-fulfilling prophecies—teachers may give up on "at-risk" students or students may internalize low expectations. This creates harm beyond prediction inaccuracy.',
+                learningPoint: 'Predictions in educational contexts can change outcomes. Design systems that support intervention without creating stigma or lowered expectations.'
+            },
+            41: {
+                correct: 'B',
+                explanation: 'This preserves the learning process while providing AI support. Students still develop writing skills through brainstorming and revision, but don\'t outsource final composition.',
+                learningPoint: 'AI in education should augment learning processes, not replace them. Focus on developing skills, not just producing outputs.'
+            },
+            42: {
+                correct: 'A',
+                explanation: 'Knowledge gaps identify what learners need to progress. This enables targeted intervention rather than generic review. It\'s a core concept in adaptive learning.',
+                learningPoint: 'Identifying knowledge gaps enables personalized learning paths. AI can analyze patterns to pinpoint specific areas needing attention.'
+            },
+            43: {
+                correct: 'False',
+                explanation: 'Practical application matters more than theoretical knowledge for workforce readiness. Assessments should measure ability to apply skills in realistic scenarios.',
+                learningPoint: 'Workforce development AI should assess applied skills, not just knowledge recall. Real-world performance prediction requires practical evaluation.'
+            },
+            44: {
+                correct: 'B',
+                explanation: 'Learning content must be accurate, pedagogically sound, and appropriately leveled. Engagement matters but is secondary to learning effectiveness.',
+                learningPoint: 'Educational content curation requires pedagogical validation, not just popularity or engagement metrics.'
+            },
+            45: {
+                correct: 'B',
+                explanation: 'Predictions affect learner psychology. Students ahead of predictions may coast; those behind may give up. This impacts motivation and agency, core drivers of learning success.',
+                learningPoint: 'Transparency about AI predictions must be balanced against psychological impacts. Sometimes hiding predictions preserves motivation and agency.'
+            }
+        };
+
+        const sectionData = {
+            1: { name: 'AI Fundamentals', max: 13, questions: [1,2,3,4,5,6] },
+            2: { name: 'AI Strategy', max: 15, questions: [7,8,9,10,11,12] },
+            3: { name: 'Hands-On Building', max: 11, questions: [13,14,15,16,17,18] },
+            4: { name: 'Data & Privacy', max: 13, questions: [19,20,21,22,23,24] },
+            5: { name: 'Product Development', max: 13, questions: [25,26,27,28,29,30] },
+            6: { name: 'Economics', max: 13, questions: [31,32,33,34,35,36] },
+            7: { name: 'Domain (Learning)', max: 15, questions: [37,38,39,40,41,42,43,44,45] }
+        };
+
+        let completedSections = [];
+        let sectionScores = {};
+        let allQuestions = {};
+
+        // Store all question text for display
+        function initializeQuestions() {
+            allQuestions = {
+                1: "You're scoping a new feature. Which scenario is BEST suited for GenAI (LLMs) rather than traditional ML?",
+                2: "Your engineer says your AI-powered customer support feature will cost $0.03 per interaction using 15K tokens. What's your FIRST question?",
+                3: "Your team proposes using a 128K context window to let users ask questions about their uploaded documents. What's the PRIMARY concern?",
+                4: "What's the key difference between fine-tuning and RAG for adapting LLMs to your domain?",
+                5: "You're building a chatbot answering questions from a 500-page employee handbook updated monthly. What's the MOST appropriate technical approach?",
+                6: "Which prompt technique improves LLM reliability for complex reasoning tasks?",
+                7: "Your CEO wants to 'add AI' to your product. Currently you have a basic sorting feature. What's the BEST response?",
+                8: "Your AI feature achieves 94% accuracy. Which scenario is MOST concerning?",
+                9: "Your fraud detection model has high precision (95%) but low recall (40%). What does this mean?",
+                10: "AI writing assistant launched with great reviews, but usage drops 40% after 2 weeks. Which metric BEST diagnoses the problem?",
+                11: "LLMs only 'hallucinate' when they malfunction or encounter edge cases outside their training.",
+                12: "What's the MOST important factor deciding if AI is appropriate for a problem?",
+                13: "You want to validate whether AI can summarize support tickets before investing engineering resources. What's the FASTEST validation approach?",
+                14: "Your prototype works in testing but fails in production during peak hours. What's the MOST likely cause?",
+                15: "You're reading API docs and see '429 Too Many Requests' error. What product decision does this inform?",
+                16: "Your no-code prototype validates the concept. Engineering says rebuilding 'properly' takes 6 weeks. What's your BEST strategic response?",
+                17: "What's the PRIMARY benefit of PMs building AI prototypes themselves?",
+                18: "Once you find a prompt that works, you don't need to version control it since prompts are just text.",
+                19: "Building an AI tutor where students upload graded assignments for personalized help. What's your PRIMARY data concern?",
+                20: "GDPR's 'right to be forgotten' means for your AI product:",
+                21: "Using OpenAI's API, all your prompts and responses are automatically used to train their models.",
+                22: "Your AI hiring tool shows significantly different rejection rates across zip codes. What's the PRIMARY concern?",
+                23: "Your team wants to build an AI tool to generate personalized sales emails. You have 500 successful examples, but your data scientist says that's too few to fine-tune a model. What's your BEST approach?",
+                24: "Which scenario poses the HIGHEST privacy risk?",
+                25: "What's MOST important when writing requirements for AI features vs. traditional features?",
+                26: "Your ML engineer reports your customer feedback sentiment classifier achieved 85% accuracy on the test set and is ready to ship. What's your next step?",
+                27: "AI models can degrade over time even without code changes, due to data drift.",
+                28: "ML engineer needs 3 months to train a custom model. What's your FIRST question?",
+                29: "What distinguishes 'research ML' from 'production ML'?",
+                30: "Updated model improved accuracy 87%→91%, but users complain feature 'got worse.' What's the MOST likely explanation?",
+                31: "AI feature costs $0.10 per interaction. You have 100K DAU, each using it 5 times daily. What's your monthly AI cost?",
+                32: "Why choose GPT-3.5 over GPT-4 for a feature?",
+                33: "What's a key risk of building exclusively on OpenAI's API?",
+                34: "Building AI models in-house is almost always cheaper than using third-party APIs at scale.",
+                35: "CFO asks how you'll justify $200K/month AI spend for new feature. What's the STRONGEST business case?",
+                36: "Which pricing model best fits products with high, variable AI inference costs?",
+                37: "AI tutor tells student '2+2=5' when asked for help with basic math. Why is this MORE serious than same error in general chatbot?",
+                38: "What distinguishes adaptive learning from content recommendations (like Netflix)?",
+                39: "AI-generated practice problems are always superior to human-created ones because AI produces infinite variations.",
+                40: "Using AI to predict student dropout risk—what's the PRIMARY ethical concern?",
+                41: "AI writing assistant helps students draft essays. Teachers say students are 'cheating.' What's the MOST constructive product response?",
+                42: "In learning analytics, what's a 'knowledge gap'?",
+                43: "In workforce development, AI skills assessments should only measure technical knowledge, not practical application.",
+                44: "Building AI to curate learning content—what's TOP priority for quality control?",
+                45: "AI predicts learner will master skill in 2 weeks. Learner sees this prediction. What's your PRIMARY concern?"
+            };
+        }
+
+        function showSectionMenu() {
+            document.getElementById('instructions').style.display = 'none';
+            document.getElementById('content').style.display = 'none';
+            document.getElementById('sectionMenu').style.display = 'block';
+            
+            renderSectionMenu();
+        }
+
+        function renderSectionMenu() {
+            let html = '';
+            
+            // Build section list first
+            let sectionsHTML = '';
+            for (let sectionNum in sectionData) {
+                const section = sectionData[sectionNum];
+                const isCompleted = completedSections.includes(parseInt(sectionNum));
+                const score = sectionScores[sectionNum] || 0;
+                
+                sectionsHTML += `
+                    <div class="section-menu-item ${isCompleted ? 'completed' : ''}" onclick="navigateToSection(${sectionNum})">
+                        <div>
+                            <h3 style="margin-bottom: 5px;">Section ${sectionNum}: ${section.name}</h3>
+                            <p style="color: #666; font-size: 0.9em;">${section.questions.length} questions · ${section.max} points</p>
+                        </div>
+                        <div>
+                            ${isCompleted ? 
+                                `<span class="section-status completed">✓ Completed (${score}/${section.max})</span>` :
+                                `<span class="section-status pending">Not Started</span>`
+                            }
+                        </div>
+                    </div>
+                `;
+            }
+            
+            html += sectionsHTML;
+            
+            /* EMAIL COLLECTION - TEMPORARILY HIDDEN
+            // Add email collection form (always visible, but message changes based on completion)
+            const hasCompletedSections = completedSections.length > 0;
+            html += `
+                <div style="background: #f0f4ff; border: 2px solid #667eea; border-radius: 8px; padding: 20px; margin-top: 20px;">
+                    <h3 style="color: #667eea; margin-bottom: 10px;">📧 Send me my results!</h3>
+                    <p style="margin-bottom: 15px; font-size: 0.95em;">
+                        ${hasCompletedSections ? 
+                            'Get your personalized learning path delivered to your inbox.' : 
+                            'Complete sections and get your personalized learning path emailed to you.'}
+                    </p>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <input type="email" id="userEmail" placeholder="your.email@example.com" 
+                               style="flex: 1; min-width: 200px; padding: 12px; border: 2px solid #667eea; border-radius: 6px; font-size: 1em;">
+                        <button class="btn" onclick="sendResultsEmail()" style="white-space: nowrap;" 
+                                ${!hasCompletedSections ? 'disabled' : ''}>
+                            Send Results
+                        </button>
+                    </div>
+                    <div id="emailStatus" style="margin-top: 10px; font-size: 0.9em;"></div>
+                </div>
+            `;
+            */
+            
+            // Add final summary button if all sections complete
+            const allComplete = Object.keys(sectionData).every(s => completedSections.includes(parseInt(s)));
+            if (allComplete) {
+                html += `
+                    <div class="button-container" style="margin-top: 30px;">
+                        <button class="btn" onclick="showFinalSummary()">View Final Summary →</button>
+                    </div>
+                `;
+            }
+            
+            document.getElementById('sectionMenuList').innerHTML = html;
+        }
+
+        function startAssessment() {
+            initializeQuestions();
+            showSectionMenu();
+        }
+
+        function navigateToSection(sectionNum) {
+            initializeQuestions();
+            document.getElementById('instructions').style.display = 'none';
+            document.getElementById('sectionMenu').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+            
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.section-results').forEach(r => r.classList.remove('show'));
+            document.getElementById(`section${sectionNum}`).classList.add('active');
+            
+            // Show results if section was already completed
+            if (completedSections.includes(sectionNum)) {
+                document.getElementById(`results${sectionNum}`).classList.add('show');
+            }
+            
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const currentSection = document.querySelector('.section.active');
+            if (!currentSection) return;
+            
+            const sectionNum = parseInt(currentSection.id.replace('section', ''));
+            const totalSections = Object.keys(sectionData).length;
+            const percentage = Math.round((completedSections.length / totalSections) * 100);
+            
+            document.getElementById('progressText').textContent = `Section ${sectionNum} of ${totalSections}`;
+            document.getElementById('progressBar').style.width = percentage + '%';
+            document.getElementById('progressBar').textContent = percentage + '%';
+        }
+
+        function submitSection(sectionNum) {
+            const questions = sectionData[sectionNum].questions;
+            let score = 0;
+            let answered = 0;
+            const results = [];
+
+            // Calculate score and collect results
+            questions.forEach(qNum => {
+                const selected = document.querySelector(`input[name="q${qNum}"]:checked`);
+                if (selected) {
+                    answered++;
+                    const points = parseInt(selected.value);
+                    score += points;
+                    
+                    const isCorrect = points > 0;
+                    const selectedLabel = selected.parentElement.querySelector('label').textContent.trim();
+                    
+                    // Find correct answer text
+                    const correctAnswerLetter = questionData[qNum].correct;
+                    let correctAnswerText = '';
+                    let maxPoints = 0;
+                    
+                    // Find the correct option and its point value
+                    document.querySelectorAll(`input[name="q${qNum}"]`).forEach(input => {
+                        const label = input.parentElement.querySelector('label').textContent.trim();
+                        const optionLetter = label.substring(0, 1);
+                        const optionPoints = parseInt(input.value);
+                        
+                        if (optionPoints > maxPoints) maxPoints = optionPoints;
+                        if (optionLetter === correctAnswerLetter) {
+                            correctAnswerText = label;
+                        }
+                    });
+                    
+                    results.push({
+                        number: qNum,
+                        isCorrect: isCorrect,
+                        userAnswer: selectedLabel,
+                        correctAnswer: correctAnswerLetter,
+                        correctAnswerText: correctAnswerText,
+                        explanation: questionData[qNum].explanation,
+                        learningPoint: questionData[qNum].learningPoint,
+                        pointsEarned: points,
+                        maxPoints: maxPoints
+                    });
+                }
+            });
+
+            if (answered < questions.length) {
+                alert(`Please answer all ${questions.length} questions before submitting.`);
+                return;
+            }
+
+            // Store score
+            sectionScores[sectionNum] = score;
+            const wasNewSection = !completedSections.includes(sectionNum);
+            if (wasNewSection) {
+                completedSections.push(sectionNum);
+                // incrementStat('sectionsCompleted'); // DISABLED
+            }
+
+            // Display results
+            displaySectionResults(sectionNum, score, results);
+
+            // Hide current section, show results
+            document.getElementById(`section${sectionNum}`).classList.remove('active');
+            document.getElementById(`results${sectionNum}`).classList.add('show');
+
+            // Scroll to results
+            document.getElementById(`results${sectionNum}`).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function displaySectionResults(sectionNum, score, results) {
+            const maxScore = sectionData[sectionNum].max;
+            const percentage = Math.round((score / maxScore) * 100);
+            const section = sectionData[sectionNum];
+            
+            let performance = '';
+            let performanceColor = '';
+            if (percentage >= 80) {
+                performance = 'Excellent! Strong understanding.';
+                performanceColor = '#28a745';
+            } else if (percentage >= 60) {
+                performance = 'Good foundation with room to grow.';
+                performanceColor = '#ffc107';
+            } else {
+                performance = 'Priority area for development.';
+                performanceColor = '#dc3545';
+            }
+
+            let html = `
+                <div class="results-header">
+                    <h2>Section ${sectionNum} Results: ${section.name}</h2>
+                    <div class="score-display">${score} / ${maxScore}</div>
+                    <p style="color: ${performanceColor}; font-weight: 600;">${performance} (${percentage}%)</p>
+                </div>
+
+                <div class="answer-review">
+                    <h3>Answer Review</h3>
+            `;
+
+            results.forEach(r => {
+                const questionText = allQuestions[r.number];
+                html += `
+                    <div class="answer-item ${r.isCorrect ? 'correct' : 'incorrect'}">
+                        <h4>Question ${r.number} ${r.isCorrect ? '✓ Correct' : '✗ Incorrect'} (${r.pointsEarned}/${r.maxPoints} pts)</h4>
+                        
+                        <div class="question-display">
+                            <strong>Question:</strong> ${questionText}
+                        </div>
+                        
+                        <div class="answer-display ${r.isCorrect ? 'correct-choice' : 'incorrect-choice'}">
+                            <strong>Your Answer:</strong> ${r.userAnswer}
+                        </div>
+                        
+                        ${!r.isCorrect ? `
+                            <div class="answer-display correct-choice">
+                                <strong>Correct Answer:</strong> ${r.correctAnswerText}
+                            </div>
+                        ` : ''}
+                        
+                        <div class="explanation">
+                            <strong>Why:</strong> ${r.explanation}
+                            <br><br>
+                            <strong>Key Takeaway:</strong> ${r.learningPoint}
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += `</div>`;
+
+            // Add personalized learning path
+            html += generateSectionLearningPath(sectionNum, percentage);
+
+            // Add navigation
+            const remainingSections = Object.keys(sectionData).filter(s => !completedSections.includes(parseInt(s)));
+            const allComplete = remainingSections.length === 0;
+            
+            html += `
+                <div class="button-container">
+                    <button class="btn btn-secondary" onclick="navigateToSection(${sectionNum})">Review Questions</button>
+                    ${!allComplete ? 
+                        `<button class="btn" onclick="showSectionMenu()">Choose Next Section (${remainingSections.length} remaining) →</button>` :
+                        `<button class="btn" onclick="showFinalSummary()">View Final Summary →</button>`
+                    }
+                </div>
+            `;
+
+            document.getElementById(`results${sectionNum}`).innerHTML = html;
+            updateProgress();
+        }
+
+        function generateSectionLearningPath(sectionNum, percentage) {
+            const paths = {
+                1: {
+                    weak: [
+                        'Read "AI Fundamentals for Product Managers" - focus on LLM architecture basics',
+                        'Practice: Build a simple chatbot using OpenAI Playground to understand prompting',
+                        'Study: Compare RAG vs fine-tuning with real examples from your domain',
+                        'Exercise: Calculate token costs for 3 different feature implementations'
+                    ],
+                    strong: [
+                        'Deepen expertise: Study advanced prompt engineering techniques (ReAct, Tree of Thoughts)',
+                        'Build: Create a RAG system using a no-code tool like n8n',
+                        'Share: Write a blog post explaining when to use GenAI vs traditional ML'
+                    ]
+                },
+                2: {
+                    weak: [
+                        'Study: Read case studies of successful and failed AI product launches',
+                        'Practice: Evaluate 5 AI features you use daily—are they appropriate AI use cases?',
+                        'Learn: Understand precision, recall, and F1 scores with worked examples',
+                        'Framework: Create your own "When to Use AI" decision tree'
+                    ],
+                    strong: [
+                        'Advanced: Study AI evaluation frameworks (HELM, Chatbot Arena)',
+                        'Build: Design evaluation metrics for an AI feature in your domain',
+                        'Lead: Mentor others on AI product strategy decisions'
+                    ]
+                },
+                3: {
+                    weak: [
+                        'Hands-on: Build your first n8n or Zapier workflow connecting an AI API',
+                        'Practice: Read API documentation for OpenAI, Anthropic, or Cohere',
+                        'Study: Learn about rate limiting, error handling, and retry logic',
+                        'Build: Create one working prototype this week—start small'
+                    ],
+                    strong: [
+                        'Advanced: Build a multi-step AI workflow with conditional logic',
+                        'Teach: Create a guide for PMs on rapid AI prototyping',
+                        'Experiment: Test 3 different AI APIs for the same use case and compare'
+                    ]
+                },
+                4: {
+                    weak: [
+                        'Study: Read GDPR and FERPA basics as they apply to AI products',
+                        'Research: Examine 3 AI privacy breach case studies and lessons learned',
+                        'Practice: Identify potential bias sources in an AI hiring or lending scenario',
+                        'Framework: Create a data privacy checklist for AI features'
+                    ],
+                    strong: [
+                        'Advanced: Design a comprehensive data governance framework for AI products',
+                        'Lead: Conduct bias auditing for an existing AI system',
+                        'Share: Write about privacy-preserving AI techniques (differential privacy, federated learning)'
+                    ]
+                },
+                5: {
+                    weak: [
+                        'Study: Read about ML lifecycle (training, deployment, monitoring, retraining)',
+                        'Practice: Write AI feature requirements for a sample use case',
+                        'Learn: Understand data drift and model degradation with examples',
+                        'Framework: Develop evaluation criteria for "good enough" AI accuracy'
+                    ],
+                    strong: [
+                        'Advanced: Design a monitoring and alerting system for AI model performance',
+                        'Build: Create a framework for research-to-production ML handoffs',
+                        'Teach: Mentor engineering teams on product requirements for AI features'
+                    ]
+                },
+                6: {
+                    weak: [
+                        'Practice: Calculate unit economics for 3 different AI features',
+                        'Study: Compare pricing models of successful AI products (ChatGPT, GitHub Copilot, Jasper)',
+                        'Learn: Understand the economics of different model sizes and providers',
+                        'Exercise: Build a cost model showing when to use GPT-3.5 vs GPT-4'
+                    ],
+                    strong: [
+                        'Advanced: Develop a build vs buy decision framework for your domain',
+                        'Analyze: Conduct ROI analysis for converting a feature from traditional to AI',
+                        'Strategy: Design a pricing model that balances user value and AI costs'
+                    ]
+                },
+                7: {
+                    weak: [
+                        'Study: Read learning science fundamentals (spacing, scaffolding, ZPD)',
+                        'Research: Analyze how successful EdTech products apply AI (Duolingo, Khan Academy)',
+                        'Practice: Identify pedagogical concerns in 3 AI educational tools',
+                        'Framework: Create guidelines for when AI helps vs hurts learning'
+                    ],
+                    strong: [
+                        'Advanced: Design an adaptive learning algorithm incorporating learning science',
+                        'Research: Study bias and equity implications in AI-powered education',
+                        'Lead: Develop principles for responsible AI in learning products'
+                    ]
+                }
+            };
+
+            const recommendations = percentage >= 70 ? paths[sectionNum].strong : paths[sectionNum].weak;
+            
+            let html = `
+                <div class="learning-path">
+                    <h3>📚 Your Learning Path for ${sectionData[sectionNum].name}</h3>
+                    <ul>
+            `;
+            
+            recommendations.forEach(rec => {
+                html += `<li>${rec}</li>`;
+            });
+            
+            html += `
+                    </ul>
+                </div>
+            `;
+            
+            return html;
+        }
+
+        function showFinalSummary() {
+            // Calculate total score
+            let totalScore = 0;
+            let maxScore = 0;
+            for (let section in sectionScores) {
+                totalScore += sectionScores[section];
+                maxScore += sectionData[section].max;
+            }
+
+            const percentage = Math.round((totalScore / maxScore) * 100);
+            
+            // Determine level
+            let level = '';
+            let interpretation = '';
+            if (percentage >= 76) {
+                level = 'Proficient AI PM';
+                interpretation = 'You demonstrate strong AI product fluency. Focus on thought leadership and advanced applications.';
+            } else if (percentage >= 51) {
+                level = 'Developing AI PM';
+                interpretation = 'You have solid foundations. Build 2-3 portfolio projects to demonstrate practical skills.';
+            } else {
+                level = 'Early-Stage AI PM';
+                interpretation = 'You\'re building foundational knowledge. Focus on hands-on experimentation and fundamentals.';
+            }
+
+            document.getElementById('finalScore').textContent = `${totalScore} / ${maxScore}`;
+            
+            // Category breakdown
+            let breakdownHTML = '<h3>Section Breakdown</h3>';
+            for (let section in sectionScores) {
+                const score = sectionScores[section];
+                const max = sectionData[section].max;
+                const pct = Math.round((score / max) * 100);
+                
+                breakdownHTML += `
+                    <div class="category-score-card">
+                        <div>
+                            <strong>${sectionData[section].name}</strong><br>
+                            <small>${score}/${max} points</small>
+                        </div>
+                        <div class="score-badge">${pct}%</div>
+                    </div>
+                `;
+            }
+            
+            document.getElementById('finalCategoryBreakdown').innerHTML = breakdownHTML;
+            
+            // Final recommendations
+            let recHTML = `
+                <h4>${level} (${percentage}%)</h4>
+                <p>${interpretation}</p>
+                <br>
+                <h4>Next Steps:</h4>
+                <ul>
+                    <li>Review sections where you scored below 60% - these are priority areas</li>
+                    <li>Build 2-3 hands-on projects demonstrating your strongest areas</li>
+                    <li>Retake this assessment quarterly to track growth</li>
+                </ul>
+            `;
+            
+            document.getElementById('finalRecommendations').innerHTML = recHTML;
+            
+            // Hide all sections, show final summary
+            document.querySelectorAll('.section, .section-results').forEach(el => {
+                el.classList.remove('active');
+                el.classList.remove('show');
+            });
+            
+            document.getElementById('finalSummary').classList.add('show');
+            document.getElementById('finalSummary').scrollIntoView({ behavior: 'smooth' });
+            
+            // Track assessment completion
+            // incrementStat('assessmentsCompleted'); // DISABLED
+        }
+
+        // Email sending function
+        async function sendResultsEmail() {
+            const email = document.getElementById('userEmail').value;
+            const statusEl = document.getElementById('emailStatus');
+            
+            // Check if any sections completed
+            if (completedSections.length === 0) {
+                statusEl.innerHTML = '<span style="color: #dc3545;">❌ Please complete at least one section first</span>';
+                return;
+            }
+            
+            if (!email || !email.includes('@')) {
+                statusEl.innerHTML = '<span style="color: #dc3545;">❌ Please enter a valid email address</span>';
+                return;
+            }
+            
+            statusEl.innerHTML = '<span style="color: #667eea;">⏳ Sending...</span>';
+            
+            // Compile results data
+            const resultsData = {
+                email: email,
+                timestamp: new Date().toISOString(),
+                totalScore: Object.values(sectionScores).reduce((a, b) => a + b, 0),
+                maxScore: Object.values(sectionData).reduce((sum, sec) => sum + sec.max, 0),
+                sectionScores: sectionScores,
+                completedSections: completedSections.length,
+                totalSections: Object.keys(sectionData).length,
+                sectionDetails: {}
+            };
+            
+            // Add section breakdowns with learning paths
+            const learningPaths = {
+                1: {
+                    weak: [
+                        'Read "AI Fundamentals for Product Managers" - focus on LLM architecture basics',
+                        'Practice: Build a simple chatbot using OpenAI Playground to understand prompting',
+                        'Study: Compare RAG vs fine-tuning with real examples from your domain',
+                        'Exercise: Calculate token costs for 3 different feature implementations'
+                    ],
+                    strong: [
+                        'Deepen expertise: Study advanced prompt engineering techniques (ReAct, Tree of Thoughts)',
+                        'Build: Create a RAG system using a no-code tool like n8n',
+                        'Share: Write a blog post explaining when to use GenAI vs traditional ML'
+                    ]
+                },
+                2: {
+                    weak: [
+                        'Study: Read case studies of successful and failed AI product launches',
+                        'Practice: Evaluate 5 AI features you use daily—are they appropriate AI use cases?',
+                        'Learn: Understand precision, recall, and F1 scores with worked examples',
+                        'Framework: Create your own "When to Use AI" decision tree'
+                    ],
+                    strong: [
+                        'Advanced: Study AI evaluation frameworks (HELM, Chatbot Arena)',
+                        'Build: Design evaluation metrics for an AI feature in your domain',
+                        'Lead: Mentor others on AI product strategy decisions'
+                    ]
+                },
+                3: {
+                    weak: [
+                        'Hands-on: Build your first n8n or Zapier workflow connecting an AI API',
+                        'Practice: Read API documentation for OpenAI, Anthropic, or Cohere',
+                        'Study: Learn about rate limiting, error handling, and retry logic',
+                        'Build: Create one working prototype this week—start small'
+                    ],
+                    strong: [
+                        'Advanced: Build a multi-step AI workflow with conditional logic',
+                        'Teach: Create a guide for PMs on rapid AI prototyping',
+                        'Experiment: Test 3 different AI APIs for the same use case and compare'
+                    ]
+                },
+                4: {
+                    weak: [
+                        'Study: Read GDPR and FERPA basics as they apply to AI products',
+                        'Research: Examine 3 AI privacy breach case studies and lessons learned',
+                        'Practice: Identify potential bias sources in an AI hiring or lending scenario',
+                        'Framework: Create a data privacy checklist for AI features'
+                    ],
+                    strong: [
+                        'Advanced: Design a comprehensive data governance framework for AI products',
+                        'Lead: Conduct bias auditing for an existing AI system',
+                        'Share: Write about privacy-preserving AI techniques (differential privacy, federated learning)'
+                    ]
+                },
+                5: {
+                    weak: [
+                        'Study: Read about ML lifecycle (training, deployment, monitoring, retraining)',
+                        'Practice: Write AI feature requirements for a sample use case',
+                        'Learn: Understand data drift and model degradation with examples',
+                        'Framework: Develop evaluation criteria for "good enough" AI accuracy'
+                    ],
+                    strong: [
+                        'Advanced: Design a monitoring and alerting system for AI model performance',
+                        'Build: Create a framework for research-to-production ML handoffs',
+                        'Teach: Mentor engineering teams on product requirements for AI features'
+                    ]
+                },
+                6: {
+                    weak: [
+                        'Practice: Calculate unit economics for 3 different AI features',
+                        'Study: Compare pricing models of successful AI products (ChatGPT, GitHub Copilot, Jasper)',
+                        'Learn: Understand the economics of different model sizes and providers',
+                        'Exercise: Build a cost model showing when to use GPT-3.5 vs GPT-4'
+                    ],
+                    strong: [
+                        'Advanced: Develop a build vs buy decision framework for your domain',
+                        'Analyze: Conduct ROI analysis for converting a feature from traditional to AI',
+                        'Strategy: Design a pricing model that balances user value and AI costs'
+                    ]
+                },
+                7: {
+                    weak: [
+                        'Study: Read learning science fundamentals (spacing, scaffolding, ZPD)',
+                        'Research: Analyze how successful EdTech products apply AI (Duolingo, Khan Academy)',
+                        'Practice: Identify pedagogical concerns in 3 AI educational tools',
+                        'Framework: Create guidelines for when AI helps vs hurts learning'
+                    ],
+                    strong: [
+                        'Advanced: Design an adaptive learning algorithm incorporating learning science',
+                        'Research: Study bias and equity implications in AI-powered education',
+                        'Lead: Develop principles for responsible AI in learning products'
+                    ]
+                }
+            };
+            
+            for (let sectionNum in sectionScores) {
+                const section = sectionData[sectionNum];
+                const sectionScore = sectionScores[sectionNum];
+                const sectionMax = section.max;
+                const percentage = Math.round((sectionScore / sectionMax) * 100);
+                
+                // Determine which learning path to use
+                const pathType = percentage >= 70 ? 'strong' : 'weak';
+                const learningPath = learningPaths[sectionNum] ? learningPaths[sectionNum][pathType] : [];
+                
+                resultsData.sectionDetails[`Section ${sectionNum}`] = {
+                    name: section.name,
+                    score: sectionScore,
+                    max: sectionMax,
+                    percentage: percentage,
+                    performance: percentage >= 70 ? 'Strong' : 'Needs Development',
+                    learningPath: learningPath
+                };
+            }
+            
+            // Calculate level
+            const percentage = Math.round((resultsData.totalScore / resultsData.maxScore) * 100);
+            if (percentage >= 76) {
+                resultsData.level = 'Proficient AI PM';
+            } else if (percentage >= 51) {
+                resultsData.level = 'Developing AI PM';
+            } else {
+                resultsData.level = 'Early-Stage AI PM';
+            }
+            
+            try {
+                // Use API route to avoid CORS issues
+                const response = await fetch('/api/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(resultsData)
+                });
+                
+                // With API route, we can read the response
+                const data = await response.json();
+                
+                if (response.ok && data.success) {
+                    statusEl.innerHTML = '<span style="color: #28a745;">✅ Results sent! Check your email.</span>';
+                    document.getElementById('userEmail').value = '';
+                } else {
+                    statusEl.innerHTML = '<span style="color: #dc3545;">❌ ' + (data.message || 'Failed to send. Please try again.') + '</span>';
+                }
+                
+            } catch (error) {
+                console.error('Error sending results:', error);
+                
+                // Provide more specific error message with fallback option
+                if (error.message.includes('Failed to fetch')) {
+                    // Create mailto link as fallback
+                    const subject = encodeURIComponent('AI PM Assessment Results Request');
+                    const body = encodeURIComponent(`Please send my results to this email address.\n\nCompleted Sections: ${completedSections.length}\nTotal Score: ${resultsData.totalScore}/${resultsData.maxScore}`);
+                    
+                    statusEl.innerHTML = `
+                        <span style="color: #dc3545;">❌ Direct submission blocked by browser.</span><br>
+                        <a href="mailto:lisa@example.com?subject=${subject}&body=${body}" 
+                           style="color: #667eea; text-decoration: underline;">
+                           Click here to email your results request instead
+                        </a>
+                        <br><small style="color: #666;">Or try opening this page in a new tab</small>
+                    `;
+                } else {
+                    statusEl.innerHTML = '<span style="color: #dc3545;">❌ Network error: ' + error.message + '</span>';
+                }
+            }
+        }
+
+        /* STATS TRACKING - TEMPORARILY DISABLED
+        // Stats tracking functions
+        function initializeStats() {
+            // Get or initialize stats from localStorage
+            if (!localStorage.getItem('assessmentStats')) {
+                localStorage.setItem('assessmentStats', JSON.stringify({
+                    visitors: 0,
+                    sectionsCompleted: 0,
+                    assessmentsCompleted: 0
+                }));
+            }
+            
+            // Track unique visitor
+            if (!sessionStorage.getItem('visitCounted')) {
+                incrementStat('visitors');
+                sessionStorage.setItem('visitCounted', 'true');
+            }
+            
+            updateStatsDisplay();
+        }
+
+        function incrementStat(statName) {
+            const stats = JSON.parse(localStorage.getItem('assessmentStats'));
+            stats[statName]++;
+            localStorage.setItem('assessmentStats', JSON.stringify(stats));
+            updateStatsDisplay();
+        }
+
+        function updateStatsDisplay() {
+            const stats = JSON.parse(localStorage.getItem('assessmentStats'));
+            document.getElementById('visitorCount').textContent = stats.visitors || 0;
+            document.getElementById('sectionsCompletedCount').textContent = stats.sectionsCompleted || 0;
+            document.getElementById('assessmentsCompletedCount').textContent = stats.assessmentsCompleted || 0;
+        }
+
+        // Initialize on load
+        window.addEventListener('load', initializeStats);
+        */
+    </script>
+</body>
+</html>
