@@ -22,7 +22,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #FF6B9D 0%,  #9B59B6 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -37,7 +37,7 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #FF6B9D 0%,  #9B59B6 100%);
             color: white;
             padding: 40px;
             text-align: center;
@@ -70,7 +70,7 @@
 
         .progress-bar-fill {
             height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #FF6B9D 0%,  #9B59B6 100%);
             transition: width 0.5s ease;
             display: flex;
             align-items: center;
@@ -86,7 +86,7 @@
         }
 
         .instructions h2 {
-            color: #667eea;
+            color: #FF6B9D;
             margin-bottom: 15px;
         }
 
@@ -112,7 +112,7 @@
         }
 
         .category-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #FF6B9D 0%,  #9B59B6 100%);
             color: white;
             padding: 20px;
             border-radius: 8px;
@@ -134,7 +134,7 @@
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 20px;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #FF6B9D;
         }
 
         .question-text {
@@ -146,7 +146,7 @@
 
         .question-type {
             display: inline-block;
-            background: #667eea;
+            background: #FF6B9D;
             color: white;
             padding: 4px 12px;
             border-radius: 12px;
@@ -172,7 +172,7 @@
         }
 
         .option:hover {
-            border-color: #667eea;
+            border-color: #FF6B9D;
             transform: translateX(5px);
         }
 
@@ -195,7 +195,7 @@
             border-radius: 6px;
             margin-bottom: 15px;
             font-style: italic;
-            border-left: 4px solid #764ba2;
+            border-left: 4px solid  #9B59B6;
         }
 
         .button-container {
@@ -206,7 +206,7 @@
         }
 
         .btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #FF6B9D 0%,  #9B59B6 100%);
             color: white;
             border: none;
             padding: 15px 40px;
@@ -257,7 +257,7 @@
         }
 
         .results-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #FF6B9D 0%,  #9B59B6 100%);
             color: white;
             padding: 20px;
             border-radius: 8px;
@@ -363,7 +363,7 @@
         }
 
         .score-badge {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #FF6B9D 0%,  #9B59B6 100%);
             color: white;
             padding: 10px 20px;
             border-radius: 20px;
@@ -376,7 +376,7 @@
             padding: 20px;
             margin-bottom: 15px;
             border-radius: 8px;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #FF6B9D;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -449,7 +449,7 @@
         }
 
         .footer a {
-            color: #667eea;
+            color: #FF6B9D;
             text-decoration: none;
             font-weight: 600;
         }
@@ -474,7 +474,7 @@
         .stat-value {
             font-size: 1.5em;
             font-weight: 700;
-            color: #667eea;
+            color: #FF6B9D;
         }
 
         .stat-label {
@@ -484,19 +484,19 @@
 
         .final-cta {
             background: #f0f4ff;
-            border: 2px solid #667eea;
+            border: 2px solid #FF6B9D;
             border-radius: 8px;
             padding: 20px;
             margin: 20px 0;
         }
 
         .final-cta h3 {
-            color: #667eea;
+            color: #FF6B9D;
             margin-bottom: 10px;
         }
 
         .final-cta a {
-            color: #667eea;
+            color: #FF6B9D;
             font-weight: 600;
             text-decoration: none;
         }
@@ -1917,12 +1917,12 @@
 
         const sectionData = {
             1: { name: 'AI Fundamentals', max: 13, questions: [1,2,3,4,5,6] },
-            2: { name: 'AI Strategy', max: 15, questions: [7,8,9,10,11,12] },
+            2: { name: 'AI Strategy', max: 13, questions: [7,8,9,10,11,12] },
             3: { name: 'Hands-On Building', max: 11, questions: [13,14,15,16,17,18] },
             4: { name: 'Data & Privacy', max: 13, questions: [19,20,21,22,23,24] },
             5: { name: 'Product Development', max: 13, questions: [25,26,27,28,29,30] },
             6: { name: 'Economics', max: 13, questions: [31,32,33,34,35,36] },
-            7: { name: 'Domain (Learning)', max: 15, questions: [37,38,39,40,41,42,43,44,45] }
+            7: { name: 'Domain (Learning)', max: 19, questions: [37,38,39,40,41,42,43,44,45] }
         };
 
         let completedSections = [];
@@ -2020,8 +2020,8 @@
             // Add email collection form (always visible, but message changes based on completion)
             const hasCompletedSections = completedSections.length > 0;
             html += `
-                <div style="background: #f0f4ff; border: 2px solid #667eea; border-radius: 8px; padding: 20px; margin-top: 20px;">
-                    <h3 style="color: #667eea; margin-bottom: 10px;">📧 Send me my results!</h3>
+                <div style="background: #f0f4ff; border: 2px solid #FF6B9D; border-radius: 8px; padding: 20px; margin-top: 20px;">
+                    <h3 style="color: #FF6B9D; margin-bottom: 10px;">📧 Send me my results!</h3>
                     <p style="margin-bottom: 15px; font-size: 0.95em;">
                         ${hasCompletedSections ? 
                             'Get your personalized learning path delivered to your inbox.' : 
@@ -2029,7 +2029,7 @@
                     </p>
                     <div style="display: flex; gap: 10px; flex-wrap: wrap;">
                         <input type="email" id="userEmail" placeholder="your.email@example.com" 
-                               style="flex: 1; min-width: 200px; padding: 12px; border: 2px solid #667eea; border-radius: 6px; font-size: 1em;">
+                               style="flex: 1; min-width: 200px; padding: 12px; border: 2px solid #FF6B9D; border-radius: 6px; font-size: 1em;">
                         <button class="btn" onclick="sendResultsEmail()" style="white-space: nowrap;" 
                                 ${!hasCompletedSections ? 'disabled' : ''}>
                             Send Results
@@ -2448,7 +2448,7 @@
                 return;
             }
             
-            statusEl.innerHTML = '<span style="color: #667eea;">⏳ Sending...</span>';
+            statusEl.innerHTML = '<span style="color: #FF6B9D;">⏳ Sending...</span>';
             
             // Compile results data
             const resultsData = {
@@ -2619,7 +2619,7 @@
                     statusEl.innerHTML = `
                         <span style="color: #dc3545;">❌ Direct submission blocked by browser.</span><br>
                         <a href="mailto:lisa@example.com?subject=${subject}&body=${body}" 
-                           style="color: #667eea; text-decoration: underline;">
+                           style="color: #FF6B9D; text-decoration: underline;">
                            Click here to email your results request instead
                         </a>
                         <br><small style="color: #666;">Or try opening this page in a new tab</small>
