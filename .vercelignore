@@ -1,0 +1,24 @@
+# Development files
+test-helper.js
+*.md
+README.md
+WEBHOOK_SETUP.md
+learning-paths.md
+
+# Question bank and data files
+v2 AI Assessment Question Bank.txt
+*-replacement.txt
+new-data-structures-*.js
+new-question-data.js
+parsed-question-bank.json
+
+# Google Apps Script files (not needed for frontend)
+google-apps-script-*.js
+
+# Git files
+.git
+.gitignore
+.DS_Store
+
+# API directory (if using serverless functions elsewhere)
+api/
