@@ -2547,11 +2547,14 @@
                 trackAssessmentStart();
                 window.hasTrackedStart = true;
             }
-            
+
             document.getElementById('instructions').style.display = 'none';
             document.getElementById('content').style.display = 'none';
             document.getElementById('sectionMenu').style.display = 'block';
-            
+
+            // Scroll to top of page
+            window.scrollTo(0, 0);
+
             renderSectionMenu();
         }
 
@@ -2625,25 +2628,28 @@
         }
 
         function navigateToSection(sectionNum) {
-            
+
             // Track section start (only if not already completed)
             if (!completedSections.includes(sectionNum)) {
                 trackSectionStart(sectionNum, sectionData[sectionNum].name);
             }
-            
+
             document.getElementById('instructions').style.display = 'none';
             document.getElementById('sectionMenu').style.display = 'none';
             document.getElementById('content').style.display = 'block';
-            
+
             document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
             document.querySelectorAll('.section-results').forEach(r => r.classList.remove('show'));
             document.getElementById(`section${sectionNum}`).classList.add('active');
-            
+
             // Show results if section was already completed
             if (completedSections.includes(sectionNum)) {
                 document.getElementById(`results${sectionNum}`).classList.add('show');
             }
-            
+
+            // Scroll to top of page
+            window.scrollTo(0, 0);
+
             updateProgress();
         }
 
