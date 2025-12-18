@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Thumbnail Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f0f2f5;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #1c1e21;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .preview-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .preview-section h2 {
+            color: #FF6B9D;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        /* Facebook/LinkedIn Preview */
+        .facebook-preview {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            max-width: 500px;
+        }
+
+        .facebook-preview img {
+            width: 100%;
+            display: block;
+        }
+
+        .facebook-preview .content {
+            padding: 12px;
+            background: #f2f3f5;
+        }
+
+        .facebook-preview .domain {
+            color: #606770;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .facebook-preview .title {
+            color: #1c1e21;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .facebook-preview .description {
+            color: #606770;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        /* Twitter Preview */
+        .twitter-preview {
+            border: 1px solid #cfd9de;
+            border-radius: 16px;
+            overflow: hidden;
+            max-width: 504px;
+        }
+
+        .twitter-preview img {
+            width: 100%;
+            display: block;
+        }
+
+        .twitter-preview .content {
+            padding: 12px;
+        }
+
+        .twitter-preview .title {
+            color: #0f1419;
+            font-size: 15px;
+            font-weight: 400;
+            margin-bottom: 2px;
+            line-height: 1.3;
+        }
+
+        .twitter-preview .description {
+            color: #536471;
+            font-size: 15px;
+            line-height: 1.3;
+            margin-bottom: 2px;
+        }
+
+        .twitter-preview .domain {
+            color: #536471;
+            font-size: 15px;
+        }
+
+        /* Google Search Preview */
+        .google-preview {
+            max-width: 600px;
+        }
+
+        .google-preview .url {
+            color: #5f6368;
+            font-size: 14px;
+            line-height: 1.3;
+            margin-bottom: 3px;
+        }
+
+        .google-preview .title {
+            color: #1a0dab;
+            font-size: 20px;
+            line-height: 1.3;
+            margin-bottom: 3px;
+            cursor: pointer;
+        }
+
+        .google-preview .title:hover {
+            text-decoration: underline;
+        }
+
+        .google-preview .description {
+            color: #4d5156;
+            font-size: 14px;
+            line-height: 1.58;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Social Media Thumbnail Preview</h1>
+
+        <!-- Facebook/LinkedIn Preview -->
+        <div class="preview-section">
+            <h2>Facebook / LinkedIn Preview</h2>
+            <div class="facebook-preview">
+                <img src="ai pm assessment thumbnail.png" alt="Thumbnail">
+                <div class="content">
+                    <div class="domain">ai-pm-assessment.vercel.app</div>
+                    <div class="title">AI Skills Assessment for Product Managers</div>
+                    <div class="description">Test your AI fluency across 7 critical domains. 46 questions, personalized results, and tailored learning paths.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Twitter Preview -->
+        <div class="preview-section">
+            <h2>Twitter Preview</h2>
+            <div class="twitter-preview">
+                <img src="ai pm assessment thumbnail.png" alt="Thumbnail">
+                <div class="content">
+                    <div class="title">AI Skills Assessment for Product Managers</div>
+                    <div class="description">Test your AI fluency across 7 critical domains. 46 questions, personalized results, and tailored learning paths.</div>
+                    <div class="domain">ai-pm-assessment.vercel.app</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Google Search Preview -->
+        <div class="preview-section">
+            <h2>Google Search Preview</h2>
+            <div class="google-preview">
+                <div class="url">https://ai-pm-assessment.vercel.app › ...</div>
+                <div class="title">AI Skills Assessment for Product Managers</div>
+                <div class="description">Evaluate and enhance your AI knowledge across 7 key domains essential for modern product management. Free assessment with personalized learning paths.</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

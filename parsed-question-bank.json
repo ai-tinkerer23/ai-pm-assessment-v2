@@ -1,0 +1,460 @@
+{
+  "questionData": {
+    "1": {
+      "1": {
+        "correct": "B",
+        "explanation": "GPT stands for Generative Pre-trained Transformer. \"Generative\" means it generates text, \"Pre-trained\" means it's trained on large datasets before being adapted to specific tasks, and \"Transformer\" is the neural network architecture it uses. Understanding this helps PMs grasp what these models fundamentally do and how they work.",
+        "learning": "GPT models are generative (create new content), pre-trained (ready to use without custom training), and based on transformer architecture (the underlying tech that enables their capabilities)."
+      },
+      "2": {
+        "correct": "B",
+        "explanation": "RAG with verified sources and explicit \"don't guess\" instructions directly addresses hallucination by grounding responses in factual content. Higher temperature increases randomness (worse for accuracy). Larger models help but don't solve the fundamental issue of making things up without sources. Shorter prompts reduce helpful context without addressing hallucination.",
+        "learning": "Reduce hallucinations through grounding in verified knowledge sources and explicit uncertainty instructions, not just model size or parameter tuning."
+      },
+      "3": {
+        "correct": "B",
+        "explanation": "RAG (retrieval-augmented generation) with vector search is ideal for large, frequently updated knowledge bases\u2014it retrieves only relevant excerpts and keeps knowledge current by updating embeddings. Weekly fine-tuning is prohibitively expensive and time-consuming. 50K documents exceed any context window and waste tokens. Training from scratch requires massive compute, data, and ML expertise.",
+        "learning": "For large, evolving knowledge bases, retrieval-based architectures are more scalable and maintainable than fine-tuning or context stuffing approaches."
+      },
+      "4": {
+        "correct": "B",
+        "explanation": "Few-shot prompting's key advantage is speed and simplicity\u2014you can test immediately by adding examples to prompts with zero training required. Fine-tuning often achieves better accuracy for specialized tasks and technical domains (contradicts A and C), and inference speed is similar for both (contradicts D).",
+        "learning": "Test few-shot prompting first for rapid validation and iteration before investing in fine-tuning infrastructure\u2014save custom training for cases where prompt engineering can't achieve required quality."
+      },
+      "5": {
+        "correct": "B",
+        "explanation": "Daily cost = (1,000 calls \u00d7 2,000 input tokens \u00d7 $0.01/1K) + (1,000 calls \u00d7 500 output tokens \u00d7 $0.03/1K) = (2,000K tokens \u00d7 $0.01/1K) + (500K tokens \u00d7 $0.03/1K) = $20 + $15 = $35. Understanding token economics and input vs output pricing is critical for cost modeling.",
+        "learning": "Model AI costs carefully at scale\u2014input vs output token pricing differs significantly, and usage volumes multiply quickly. Calculate costs before committing to architectures."
+      },
+      "6": {
+        "correct": "A",
+        "explanation": "Chain-of-thought prompting significantly improves accuracy on multi-step reasoning problems by forcing the model to articulate intermediate steps. This catches logical errors early and improves final answer quality. Research shows 20-40% accuracy improvements on reasoning tasks.",
+        "learning": "For complex reasoning tasks, explicitly prompt models to show their work step-by-step\u2014it improves both accuracy and makes outputs debuggable when errors occur."
+      },
+      "7": {
+        "correct": "B",
+        "explanation": "APIs excel for general capabilities where foundation models are already strong\u2014summarization, Q&A, content generation don't need custom training. Options A, C, and D all favor fine-tuning: specialized domains with unique vocab, large domain-specific datasets, and control requirements all justify the investment in custom models.",
+        "learning": "Use third-party APIs for general AI capabilities; invest in fine-tuning only when you have domain-specific data, unique requirements, or need specialized accuracy that general models can't provide."
+      }
+    },
+    "2": {
+      "1": {
+        "correct": "B",
+        "explanation": "Option B explores creative solutions that acknowledge data constraints while seeking value. Option A is too conservative\u2014transfer learning and external data can work with limited internal data. Option C abandons ML prematurely without exploring hybrid approaches. Option D's synthetic data may not capture real customer behavior patterns and could produce misleading forecasts.",
+        "learning": "When facing data constraints, explore transfer learning, external datasets, simpler models, and hybrid approaches before abandoning ML entirely or waiting years for data."
+      },
+      "2": {
+        "correct": "B",
+        "explanation": "Option B investigates before reacting\u2014understanding actual customer impact and unmet needs. Option A wastes resources on feature-matching without validating customer demand. Option C is overconfident\u2014high satisfaction doesn't mean there aren't unmet needs or that customers won't be attracted to competitor innovations. Option D focuses on messaging rather than understanding whether there's a real product gap.",
+        "learning": "When competitors launch AI features, investigate whether they're solving real customer problems before reactive feature-matching or dismissing as hype."
+      },
+      "3": {
+        "correct": "B",
+        "explanation": "Option B directly addresses competitive differentiation with quantified business impact (20% win rate increase). Option A provides internal efficiency but doesn't drive revenue or market position. Option C improves existing capabilities but incremental enhancements rarely drive strategic advantage. Option D responds to sales pressure, but prospect questions don't always indicate buying criteria\u2014may be table stakes or curiosity rather than decision factors.",
+        "learning": "Prioritize AI investments that directly impact competitive positioning and revenue growth over internal efficiency or incremental improvements to existing capabilities."
+      },
+      "4": {
+        "correct": "B",
+        "explanation": "Option B correctly prioritizes understanding business impact before committing resources. While Option C (root cause) and Option D (A/B testing) are valuable, they come AFTER confirming there's actually a business problem to solve. Option A jumps to expensive solutions without validating impact\u201478% accuracy might still drive strong business results, or the accuracy metric might not correlate with revenue.",
+        "learning": "Before investing in AI improvements, validate that model metric changes are actually hurting business outcomes\u2014accuracy is a means to business goals, not the goal itself."
+      },
+      "5": {
+        "correct": "B",
+        "explanation": "The composition of the 10% matters critically. If they're VIP customers, failures occur in safety-critical workflows, disproportionately affect vulnerable populations, or happen during high-value transactions, the feature could be catastrophic despite 90% overall success. Additionally, if failures are non-random (affecting specific user segments or use cases), they can create discrimination or liability issues.",
+        "learning": "Analyze which users and scenarios AI fails on, not just failure rates\u201410% failures can be acceptable or catastrophic depending on who is affected and when."
+      },
+      "6": {
+        "correct": "B",
+        "explanation": "Option B leverages AI for triage\u2014even imperfect AI helps humans focus on highest-risk content, catching more violations than random sampling. Option A undervalues AI\u2014reviewing AI-flagged content catches more violations than random 1,000 of 50K. Option C delays value while pursuing perfect recall, which may be unachievable. Option D is dangerous\u201440% missed violations in content moderation creates serious safety and legal risks.",
+        "learning": "Imperfect AI can provide strategic value through triage and prioritization\u2014it doesn't need perfect accuracy to meaningfully improve outcomes over manual-only processes at scale."
+      }
+    },
+    "3": {
+      "1": {
+        "correct": "C",
+        "explanation": "This is a classic RAG retrieval problem\u2014the system is finding content that seems semantically related but isn't actually the right answer. This indicates the need for better relevance scoring, re-ranking, or retrieval threshold tuning. Option A (chunk size) affects context completeness, not wrong retrievals. Option B (embeddings) could contribute but the issue is more about ranking relevance. Option D is wrong because the model is citing actual pages, not hallucinating\u2014it's retrieving the wrong pages.",
+        "learning": "RAG systems can retrieve semantically similar but contextually wrong content. Use re-ranking, relevance thresholds, and retrieval quality metrics to ensure the right content surfaces."
+      },
+      "2": {
+        "correct": "B",
+        "explanation": "Option B uses intelligent routing to right-size the model for each task\u2014Haiku handles simple tasks quickly and cheaply while GPT-4 handles complex tasks. This could reduce costs by 50-60% while maintaining quality. Option A degrades quality across the board by cutting output length. Option C sacrifices quality for complex tasks where it matters. Option D creates poor UX (users waiting 30 seconds) without reducing per-request costs.",
+        "learning": "Model routing based on task complexity is one of the most effective cost optimization strategies\u2014match model capability to task requirements rather than using one-size-fits-all."
+      },
+      "3": {
+        "correct": "B",
+        "explanation": "Option B is structured, specific, and includes role context, output format, and key elements to extract. This gives the AI clear guidance. Option A is too vague. Option C uses unnecessary fluff words (\"carefully,\" \"thoughtful\") without adding structure. Option D wastes tokens on unnecessary context\u2014models don't need motivation, they need clear instructions.",
+        "learning": "Effective prompts are specific, structured, and include clear output format and key requirements\u2014avoid vague instructions and unnecessary context."
+      },
+      "4": {
+        "correct": "B",
+        "explanation": "Few-shot learning typically works well with just 2-5 high-quality examples. More examples consume valuable context window space and can even confuse the model if they're inconsistent. Quality and diversity of examples matter far more than quantity. 10+ examples would be excessive for most tasks and waste tokens that could be used for the actual task content.",
+        "learning": "Few-shot learning is effective with 2-5 well-chosen examples\u2014focus on quality and representativeness rather than quantity to preserve context window space."
+      },
+      "5": {
+        "correct": "B",
+        "explanation": "With only 60% of violations caught, you're missing 40% of policy-breaking content\u2014a critical risk. High recall (catching violations) is more important than high precision (avoiding false positives) in content moderation. Human reviewers can handle false positives, but missed violations cause harm. Option A doesn't address the detection problem. Option C focuses on the wrong metric\u2014accuracy hides the class imbalance problem. Option D would make detection worse.",
+        "learning": "In content moderation and safety-critical applications, prioritize recall (catching violations) over precision (avoiding false positives)\u2014false negatives are typically riskier than false positives that can be human-reviewed."
+      },
+      "6": {
+        "correct": "B",
+        "explanation": "This is a classic prompt grounding issue. Without explicit instructions like \"Answer ONLY based on the provided context,\" models may default to their internal knowledge, especially after version changes where behavior can shift. GPT-4 Turbo has similar capabilities to GPT-4 (A is wrong). Embeddings are independent of the generation model (C is wrong). Chunk size affects retrieval quality, not whether the model stays grounded (D is wrong).",
+        "learning": "RAG prompts must explicitly instruct LLMs to stay grounded in retrieved context\u2014model upgrades can change default behaviors, so always include explicit grounding instructions to prevent hallucinations."
+      }
+    },
+    "4": {
+      "1": {
+        "correct": "B",
+        "explanation": "Transparency through clear privacy notices is a fundamental requirement across GDPR, CCPA, and most privacy regulations. Users must be informed what data is collected and why. Option A is good security practice but doesn't address the privacy disclosure requirement. Option C may be good practice but isn't universally required at that specific timeframe. Option D is more restrictive than most regulations require for this use case (though some require opt-out capability).",
+        "learning": "Transparency is fundamental to data privacy compliance\u2014users must be clearly informed what data you collect, how you use it, and their rights regarding that data."
+      },
+      "2": {
+        "correct": "B",
+        "explanation": "Using protected characteristics (age, gender, ethnicity) as model inputs in employment decisions creates severe legal and ethical risks, even if it \"improves accuracy.\" Historical patterns often reflect discrimination that shouldn't be perpetuated. This could violate employment discrimination laws in many jurisdictions. Option A perpetuates bias with a disclaimer. Option C's \"fairness constraints\" don't eliminate the fundamental problem of using protected characteristics. Option D is unethical\u2014you don't A/B test discrimination.",
+        "learning": "Never use protected demographic characteristics as direct model inputs in high-stakes decisions like hiring, lending, or criminal justice\u2014even if it improves technical accuracy, it risks encoding historical discrimination and violating laws."
+      },
+      "3": {
+        "correct": "B",
+        "explanation": "Different API providers have different data retention and training policies. OpenAI offers options to opt out of training, and some enterprise plans offer zero data retention. You must understand these policies when users share sensitive data. Option A is false\u2014providers don't automatically redact sensitive data. Option C addresses transit security but not storage/usage. Option D misunderstands consent\u2014users need specific notice about third-party AI processing.",
+        "learning": "When using third-party AI APIs with user data, understand data retention policies, training opt-outs, and zero-retention options\u2014encryption alone doesn't address data storage and usage concerns."
+      },
+      "4": {
+        "correct": "B",
+        "explanation": "Simply removing direct identifiers like names and emails often isn't sufficient for true anonymization. If individuals can still be re-identified through combination of other attributes (age + ZIP code + medical condition, for example), it's still considered personal data under GDPR. True anonymization requires ensuring individuals cannot be re-identified even with additional information. This is a common misconception that creates compliance risks.",
+        "learning": "Removing obvious identifiers isn't enough for true anonymization\u2014individuals must not be re-identifiable through any combination of remaining data attributes under regulations like GDPR."
+      },
+      "5": {
+        "correct": "C",
+        "explanation": "Under GDPR, you're the data controller and responsible for ensuring deletion across all data processors (AWS, OpenAI) when the data subject is an EU resident. You must delete from production databases, backups, and verify third-party processors' retention policies. If OpenAI retains logs, you may need enterprise agreements with zero retention. Option A is incomplete. Option B incorrectly suggests you're not responsible for processors. Option D confuses training data (which this scenario doesn't mention) with processing logs.",
+        "learning": "As data controller under GDPR for EU residents' data, you're responsible for ensuring complete data deletion across ALL systems and third-party processors\u2014understand retention policies and deletion capabilities before choosing vendors."
+      },
+      "6": {
+        "correct": "B",
+        "explanation": "GDPR applies based on the location of data subjects (EU residents), not where your company is based or where data is stored. High-risk processing (which AI often qualifies as) requires a DPIA for EU residents' data. CCPA doesn't require DPIAs (A is wrong). Data storage location doesn't determine GDPR applicability (C is wrong). DPIAs are legally mandatory for high-risk processing of EU residents' data, not optional (D is wrong).",
+        "learning": "GDPR requirements (including DPIAs) apply based on where your users are located (EU residents), not where your company is based or where you store data\u2014having even a small number of EU users triggers compliance obligations."
+      }
+    },
+    "5": {
+      "1": {
+        "correct": "B",
+        "explanation": "The smartest AI MVPs often start without ML\u2014use rules, heuristics, or human judgment to validate that users want the feature and will use it, while collecting data for future ML. This de-risks the investment and provides real usage data. Option A over-invests before validation. Option C wastes money on expensive APIs before proving value. Option D delays learning and market validation unnecessarily.",
+        "learning": "AI product MVPs should validate user demand and collect real data first\u2014often through non-ML solutions (rules, human-in-the-loop)\u2014before investing in complex ML infrastructure."
+      },
+      "2": {
+        "correct": "A",
+        "explanation": "Starting with rule-based logic (e.g., \"if beginner + goal=weight loss \u2192 3x cardio, 2x strength\") lets you launch quickly, validate product-market fit, and collect real user data for future ML improvements. Many successful AI products start this way. Option B delays learning and market validation unnecessarily. Option C's synthetic data won't capture real user behavior patterns and could produce poor recommendations. Option D raises privacy concerns, may have domain mismatch, and partnerships take time.",
+        "learning": "When facing ML data constraints, launch with simpler non-ML solutions (rules, heuristics, expert knowledge) to validate the product concept while collecting real user data for future ML improvements\u2014don't let the pursuit of perfect ML block good product launches."
+      },
+      "3": {
+        "correct": "B",
+        "explanation": "This is a classic train-test distribution mismatch. Test environments often use curated, clean queries while real users ask messy, ambiguous, or off-topic questions. The bot likely works well for expected queries but fails on edge cases and unexpected phrasings that represent real usage. Option A might contribute but doesn't explain \"unhelpful.\" Option C assumes bigger is better without diagnosing the real issue. Option D dismisses valid user feedback.",
+        "learning": "Test-production gaps often stem from unrealistic test data\u2014real users are messier, more diverse, and more creative than test scenarios. Supplement controlled testing with real user pilots and edge case analysis."
+      },
+      "4": {
+        "correct": "B",
+        "explanation": "Perfect accuracy often isn't necessary for a successful product launch. The right approach depends on the use case: a 70% accurate recommendation engine might deliver value immediately while you improve it, whereas a medical diagnosis tool needs much higher accuracy before launch. Speed to market, user feedback, and iterative improvement often beat waiting for perfect accuracy. The key is understanding what accuracy threshold provides user value.",
+        "learning": "Model accuracy requirements vary by use case\u2014prioritize \"good enough\" accuracy to launch and learn, rather than delaying for perfection, except in high-stakes domains (medical, financial, safety-critical)."
+      },
+      "5": {
+        "correct": "C",
+        "explanation": "Accuracy percentages alone don't determine product value. You need to understand: (1) Is 75% tone accuracy \"good enough\" to be useful? (2) Which feature drives more engagement/retention/revenue? (3) What's the competitive landscape? The answer requires business analysis, not just technical metrics. Option A prioritizes technical achievement over business value. Option B assumes differentiation trumps all. Option D splits focus and may deliver nothing well.",
+        "learning": "Don't prioritize features based solely on accuracy metrics\u2014evaluate business impact, competitive positioning, and whether the accuracy threshold delivers user value, even if it's not perfect."
+      },
+      "6": {
+        "correct": "B",
+        "explanation": "Significant performance gaps across user segments often indicate the model wasn't trained on representative data for those segments. This is both a business problem (missing revenue from segments) and a fairness problem. You should investigate root causes and consider segment-specific improvements. Option A ignores a significant performance gap. Option C makes unfounded assumptions about user capability. Option D is backwards\u2014you'd be confirming the AI hurts them without fixing it.",
+        "learning": "Monitor AI feature performance across user segments\u2014large performance gaps often indicate training data bias or underrepresentation, requiring targeted data collection or segment-specific models to serve all users well."
+      }
+    },
+    "6": {
+      "1": {
+        "correct": "B",
+        "explanation": "10,000 users \u00d7 5 calls = 50,000 total calls. 50,000 calls \u00d7 $0.02 = $1,000. This basic calculation is fundamental to understanding AI cost structures. PMs must be able to quickly estimate costs to evaluate feature viability and set budgets.",
+        "learning": "Understanding unit economics (cost per call \u00d7 usage volume) is essential for AI product planning\u2014always calculate total costs before committing to features."
+      },
+      "2": {
+        "correct": "B",
+        "explanation": "You need to model the full economic impact: increased conversions bring in more customers, reduced churn keeps them longer (dramatically impacting LTV), but AI costs reduce margin. For example, reducing churn from 5% to 3% could increase LTV by 67% (1/0.03 vs 1/0.05 = 33 vs 20 months retention), far exceeding the $3/month cost. Option A oversimplifies by ignoring LTV. Option C ignores churn impact and costs. Option D is irrelevant to your unit economics.",
+        "learning": "Evaluate AI feature economics holistically by modeling impact on customer acquisition, retention (LTV), and margins\u2014don't just look at cost as percentage of revenue."
+      },
+      "3": {
+        "correct": "B",
+        "explanation": "This is a classic fixed + variable cost structure. At 10,000 predictions/month, your cost per prediction is $0.55 ($5,000/10,000 + $0.05). At 100,000 predictions, it drops to $0.10 ($5,000/100,000 + $0.05). Understanding this is critical for pricing and scaling strategies. Option A ignores fixed costs. Option C is wrong\u2014$5,000 matters a lot at low volumes. Option D would lose money at low volumes.",
+        "learning": "AI products typically have fixed costs (infrastructure, hosting) and variable costs (per-inference)\u2014your unit economics improve dramatically with scale as fixed costs spread across more usage."
+      },
+      "4": {
+        "correct": "B",
+        "explanation": "While GPT-3.5 is ~10x cheaper per token, the total cost impact depends on whether GPT-3.5 requires more attempts, longer prompts, or additional correction steps to achieve similar results. If GPT-3.5 needs 3 tries versus GPT-4's 1 try, you only save ~3x. You might also need more detailed prompts with GPT-3.5, increasing input tokens. Quality degradation could increase customer support costs. Always measure end-to-end costs, not just per-token pricing.",
+        "learning": "Model pricing is only one factor in total cost of ownership\u2014cheaper models may require more attempts, longer prompts, or create downstream costs through quality issues."
+      },
+      "5": {
+        "correct": "B",
+        "explanation": "This requires full economic modeling over a realistic time horizon. At 50M tokens/month, Claude costs $150/month ($1,800/year) versus fine-tuning at ~$21,000 first year. The API is dramatically cheaper despite lower accuracy. However, if you evaluate: (1) 3% accuracy impact on business, (2) whether you expect volume to grow 10x (making fine-tuning more attractive), (3) data privacy needs, the answer becomes nuanced. Option A ignores economics entirely. Option C and D are oversimplified rules.",
+        "learning": "Build vs buy decisions require modeling total cost of ownership over time horizons, factoring in upfront costs, recurring costs, expected volume growth, and whether quality differences materially impact business outcomes."
+      },
+      "6": {
+        "correct": "B",
+        "explanation": "A/B testing is the gold standard for measuring causal impact on business metrics. If the AI search group converts at 5% vs control at 4%, you can calculate: 1% conversion lift \u00d7 number of users \u00d7 average order value = incremental revenue, then compare to $20,000 cost. Option A (surveys) measures stated preference, not revealed preference. Option C measures usage, not value. Option D measures relative quality, not economic value.",
+        "learning": "Measure AI feature economic value through controlled experiments (A/B tests) that isolate the feature's causal impact on key business metrics (conversion, retention, revenue)\u2014usage metrics alone don't prove business value."
+      }
+    },
+    "7": {
+      "1": {
+        "correct": "A",
+        "explanation": "The operational challenge is real: going from flagging 3% to 8% means your fraud team reviews 2.7x more transactions. If you process 1M transactions monthly, that's 50,000 additional reviews. You need to calculate: (1) Cost of additional fraud team capacity, (2) Customer friction from more false positives, (3) Value of catching additional 5% of fraud. Often the marginal fraud caught doesn't justify the exponential increase in review volume. Options B and D don't address the operational reality. Option C isn't typically impacted by review flagging.",
+        "learning": "In fraud detection, adjusting sensitivity thresholds has real operational consequences\u2014more fraud caught means exponentially more legitimate transactions flagged for review, requiring capacity planning and cost-benefit analysis."
+      },
+      "2": {
+        "correct": "B",
+        "explanation": "This is a classic \"long tail\" problem in healthcare AI. Patients with multiple chronic conditions are less common in training data but represent critical use cases. As PM, you must decide: (1) Narrow scope to where AI works reliably and clearly communicate limitations, (2) Invest in collecting multi-condition data and validate separately, or (3) Implement human escalation for complex cases. Option A is too vague. Option C assumes technical solution without addressing data distribution. Option D deflects from a real product limitation.",
+        "learning": "When AI performs poorly on specific segments (complex cases, edge cases, underrepresented populations), decide whether to narrow scope to reliable use cases, invest in targeted data collection, or implement human escalation\u2014don't deploy everywhere and hope doctors compensate for AI weaknesses."
+      },
+      "3": {
+        "correct": "B",
+        "explanation": "This tests product integrity and managing customer expectations. 78% accuracy on international contracts could mean missing critical jurisdictional issues. Responsible options: (1) Restrict scope to domestic where performance is reliable, (2) Clearly segment performance by contract type and emphasize expert review for international deals, (3) Improve international performance before launching broadly. Option A risks customer trust and potential liability. Option C may be too conservative if you're transparent. Option D is ethically questionable\u2014burying important limitations.",
+        "learning": "When AI performance varies significantly across use cases, either restrict scope to where it's reliable, clearly communicate performance differences and recommend appropriate human oversight, or improve performance before broad launch\u2014don't hide limitations in fine print."
+      },
+      "4": {
+        "correct": "B",
+        "explanation": "This is the classic \"AI in a vacuum\" problem. The prediction model might be excellent, but value requires: (1) Buyers trusting AI over their intuition, (2) Supply chain executing on recommendations, (3) Store managers following new protocols, (4) Systems integration for acting on predictions. Many AI projects fail at the \"last mile\"\u2014the organizational change required to act on AI insights. Options A, C, D assume technical problems when the real issue is adoption and execution.",
+        "learning": "AI predictions create value only when acted upon\u2014factor in change management, user adoption, workflow integration, and organizational readiness. Technical accuracy alone doesn't guarantee business impact without operational execution."
+      },
+      "5": {
+        "correct": "B",
+        "explanation": "Realistic AI customer support automation is typically 40-60% of volume in first year, and never reaches 80-90% because: (1) Edge cases and complex issues always need humans, (2) Escalations remain necessary, (3) New issues emerge constantly, (4) Some customers prefer human interaction. PMs who promise 80-90% automation set unrealistic expectations. The value is in handling routine inquiries quickly while humans focus on complex issues. Setting realistic expectations is critical.",
+        "learning": "Set realistic expectations for AI customer support automation\u201440-60% is typical, not 80-90%. There will always be complex cases, escalations, and edge cases requiring human agents. Position AI as handling routine volume, not eliminating human support."
+      },
+      "6": {
+        "correct": "B",
+        "explanation": "This tests understanding that different product categories have different purchase behaviors requiring different AI approaches. Fashion: \"customers who bought this dress also bought these shoes\" works because style preferences transfer. Electronics: browsing a laptop doesn't predict you'll want a mouse\u2014specs and requirements matter more. You might need specification-based or use-case-based recommendations for electronics. Option A makes assumptions about customers. Option C doesn't address the behavioral difference. Option D misunderstands the issue.",
+        "learning": "AI recommendation strategies should match purchase behavior by category\u2014collaborative filtering works for preference-based purchases (fashion, entertainment), while specification-based or use-case matching works better for functional purchases (electronics, tools)."
+      },
+      "7": {
+        "correct": "B",
+        "explanation": "This tests understanding that not all value is captured in metrics. Engagement is measurable, but brand voice consistency, avoiding tone-deaf content, and preventing PR disasters require human judgment. One viral post with subtle brand voice problems could damage brand equity in ways that don't show up in short-term engagement metrics. Option A optimizes for the wrong metric. Option C assumes brand voice is purely a training problem. Option D tests the wrong thing\u2014brand consistency isn't about engagement.",
+        "learning": "For brand-critical content, maintain human editorial review even if AI performs well on engagement metrics\u2014brand voice consistency, tone appropriateness, and PR risk assessment require human judgment that isn't captured in performance metrics."
+      },
+      "8": {
+        "correct": "B",
+        "explanation": "This tests understanding AI's role in hiring. 40% disagreement isn't necessarily failure\u2014it might mean AI is successfully identifying strong candidates that don't fit traditional patterns (career switchers, non-traditional backgrounds, different education paths). The key metric is: do these \"disagreement\" candidates perform well after hiring? If yes, AI is adding value by reducing human bias. If no, then AI needs improvement. Option A assumes disagreement = failure. Option C removes human judgment inappropriately. Option D is premature.",
+        "learning": "In hiring AI, some disagreement with human judgment can indicate the AI is successfully reducing human bias and surfacing non-traditional candidates\u2014measure whether disputed candidates perform well after hiring, not just agreement rates."
+      },
+      "9": {
+        "correct": "B",
+        "explanation": "Compliance reports have the highest accuracy requirements and legal consequences. Errors in financial compliance can result in regulatory fines, legal liability, and audit failures. Project C (routing) has low error cost\u2014missrouted ticket gets rerouted. Project B (personalization) has error tolerance\u2014suboptimal content recommendation doesn't cause major harm. While all need oversight, compliance documentation requires the most rigorous human review due to regulatory stakes.",
+        "learning": "Prioritize human oversight based on error consequences and regulatory requirements\u2014compliance and legal use cases typically require more rigorous review than routing or personalization tasks where errors are more recoverable."
+      }
+    }
+  },
+  "allQuestions": {
+    "1": {
+      "1": "What does GPT stand for in models like GPT-4?",
+      "2": "Your AI customer service bot is hallucinating incorrect policy information. Which approach MOST effectively reduces hallucinations?",
+      "3": "What's the MOST appropriate technical architecture?",
+      "4": "What's the PRIMARY advantage of few-shot prompting compared to fine-tuning a model?",
+      "5": "Your AI feature makes 1,000 API calls per day. Each call uses 2,000 input tokens and generates 500 output tokens. Your API charges $0.01 per 1,000 input tokens and $0.03 per 1,000 output tokens. What's your daily cost?",
+      "6": "Chain-of-thought prompting improves LLM performance on complex reasoning tasks by instructing the model to show its intermediate reasoning steps.",
+      "7": "You're deciding between using an LLM API versus fine-tuning your own model. Which factor MOST favors using a third-party API?"
+    },
+    "2": {
+      "1": "What's your BEST response as PM?",
+      "2": "Your competitor launches \"AI-powered insights\" generating massive PR buzz. Your analytics show your existing rule-based insights have 95% user satisfaction. What's your move?",
+      "3": "You're prioritizing AI investments across four validated opportunities with similar technical feasibility. Which is MOST strategically valuable?",
+      "4": "What's your FIRST priority as PM?",
+      "5": "If your AI feature achieves 90% success rate across all users, it's ready to ship even if it fails for the remaining 10%.",
+      "6": "What's your strategic approach to ensure effective content moderation?"
+    },
+    "3": {
+      "1": "You're testing a new RAG system that answers questions about your company's product documentation. During testing, you notice it sometimes cites information from Page 47 when the correct answer is actually on Page 12. What's the MOST likely cause?",
+      "2": "What's your BEST optimization strategy?",
+      "3": "You're writing a prompt for an AI assistant that summarizes customer support tickets. Which prompt structure is MOST effective?",
+      "4": "When using few-shot examples in your prompts, you should always provide at least 10 examples to ensure the model learns the pattern effectively.",
+      "5": "You're building a content moderation system that flags policy violations in user posts. During evaluation, you find the system has 85% accuracy with this distribution: 90% of safe posts correctly marked safe, but only 60% of violating posts correctly flagged. What should you prioritize?",
+      "6": "Your production RAG system suddenly starts giving poor answers after you upgraded from GPT-4 to GPT-4 Turbo. The retrieval is working correctly and returning relevant documents, but answers are often off-topic or outdated. What's the MOST likely root cause?"
+    },
+    "4": {
+      "1": "Your AI chatbot logs all user conversations for quality improvement. Under most data privacy regulations, what is the minimum you must do?",
+      "2": "What's your BEST response as PM?",
+      "3": "Your customer support chatbot uses OpenAI's API to answer user questions. Users sometimes share sensitive information like order numbers, email addresses, and account details in their messages. What's the MOST important consideration?",
+      "4": "If you anonymize personal data by removing names and email addresses before training an AI model, the data is no longer considered \"personal data\" under regulations like GDPR.",
+      "5": "What must you do to fully comply?",
+      "6": "Your AI product processes customer data and is based in the US. You have 50 customers in California, 30 in New York, and 20 in the EU. Your legal team says you need to conduct a Data Protection Impact Assessment (DPIA). What triggers this requirement?"
+    },
+    "5": {
+      "1": "You're planning an MVP for an AI-powered feature. Which approach BEST represents an AI product MVP strategy?",
+      "2": "What's your BEST product strategy?",
+      "3": "Your AI-powered customer service bot is performing well in testing but users complain it feels \"robotic\" and \"unhelpful\" in production. What's the MOST likely issue?",
+      "4": "When building an AI product feature, you should always prioritize achieving the highest possible model accuracy before launch, even if it delays release by several months.",
+      "5": "How should you prioritize?",
+      "6": "You're launching an AI feature that personalizes content recommendations. After launch, engagement increases 15% but you notice certain user segments (older users, non-English speakers) have 40% lower engagement than others. What's your BEST approach?"
+    },
+    "6": {
+      "1": "Your AI feature costs $0.02 per API call. If 10,000 users each make an average of 5 calls per month, what are your monthly API costs?",
+      "2": "What's the MOST important factor in determining if this AI feature is economically viable?",
+      "3": "Your AI product has two cost components: $5,000/month for model hosting infrastructure and $0.05 per prediction. Which statement is TRUE?",
+      "4": "Switching from GPT-4 to GPT-3.5 will always reduce your AI costs by approximately 10x because GPT-3.5 is 10x cheaper per token.",
+      "5": "How should you evaluate this decision?",
+      "6": "Your AI-powered search feature costs $20,000/month but you're unsure if it drives revenue. Which approach BEST measures the economic value of this feature?"
+    },
+    "7": {
+      "1": "What's the key trade-off you need to evaluate before making this change?",
+      "2": "Your healthcare AI suggests treatment options based on patient symptoms and medical history. Doctors report it works well for common conditions but performs poorly for patients with multiple chronic conditions. What does this indicate about your AI strategy?",
+      "3": "What's your responsibility as PM?",
+      "4": "Your retail AI predicts demand for 50,000 SKUs across 800 stores. Finance calculated it could reduce excess inventory costs by $12M annually. Six months post-launch, you've only achieved $2M in savings. What's the most likely strategic oversight?",
+      "5": "When implementing AI for customer support, you should expect to fully automate 80-90% of support volume within the first 6 months if the AI is well-designed.",
+      "6": "What does this performance gap likely indicate about your product strategy?",
+      "7": "Your marketing team's AI generates social media content that performs 20% better in engagement than human-written posts. However, it occasionally produces content with subtle brand voice inconsistencies that your brand manager catches in review. What's the right product approach?",
+      "8": "What does this indicate about your AI strategy?",
+      "9": "You're considering AI for three projects: (A) Generating financial compliance reports from transaction data, (B) Personalizing learning content for students, (C) Routing customer support tickets to appropriate teams. Which generally requires the MOST human oversight?"
+    }
+  },
+  "sectionData": {
+    "1": {
+      "name": "AI FUNDAMENTALS",
+      "max": 14,
+      "questions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "points": [
+        1,
+        2,
+        3,
+        2,
+        3,
+        1,
+        2
+      ]
+    },
+    "2": {
+      "name": "AI STRATEGY",
+      "max": 14,
+      "questions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "points": [
+        3,
+        2,
+        2,
+        3,
+        1,
+        3
+      ]
+    },
+    "3": {
+      "name": "Hands-On Building",
+      "max": 14,
+      "questions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "points": [
+        2,
+        3,
+        2,
+        1,
+        3,
+        3
+      ]
+    },
+    "4": {
+      "name": "Data & Privacy",
+      "max": 14,
+      "questions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "points": [
+        1,
+        3,
+        2,
+        2,
+        3,
+        3
+      ]
+    },
+    "5": {
+      "name": "Product Development",
+      "max": 14,
+      "questions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "points": [
+        1,
+        3,
+        2,
+        2,
+        3,
+        3
+      ]
+    },
+    "6": {
+      "name": "Economics",
+      "max": 14,
+      "questions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "points": [
+        1,
+        3,
+        2,
+        2,
+        3,
+        3
+      ]
+    },
+    "7": {
+      "name": "AI Use Cases",
+      "max": 16,
+      "questions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "points": [
+        2,
+        2,
+        2,
+        3,
+        1,
+        3,
+        1,
+        2,
+        1
+      ]
+    }
+  }
+}

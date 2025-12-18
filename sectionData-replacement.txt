@@ -1,0 +1,9 @@
+        const sectionData = {
+            1: { name: 'AI FUNDAMENTALS', max: 14, questions: [1, 2, 3, 4, 5, 6, 7] },
+            2: { name: 'AI STRATEGY', max: 14, questions: [8, 9, 10, 11, 12, 13] },
+            3: { name: 'Hands-On Building', max: 14, questions: [14, 15, 16, 17, 18, 19] },
+            4: { name: 'Data & Privacy', max: 14, questions: [20, 21, 22, 23, 24, 25] },
+            5: { name: 'Product Development', max: 14, questions: [26, 27, 28, 29, 30, 31] },
+            6: { name: 'Economics', max: 14, questions: [32, 33, 34, 35, 36, 37] },
+            7: { name: 'AI Use Cases', max: 16, questions: [38, 39, 40, 41, 42, 43, 44, 45, 46] },
+        };
